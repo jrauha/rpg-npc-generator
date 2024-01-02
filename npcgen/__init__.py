@@ -4,13 +4,10 @@ from npcgen import routes
 from npcgen.extensions import db
 
 
-def create_app(test_config=None):
+def create_app():
     app = Flask(__name__)
 
-    if test_config is None:
-        app.config.from_object("config.settings")
-    else:
-        app.config.from_mapping(test_config)
+    app.config.from_object("config.settings")
 
     db.init_app(app)
 

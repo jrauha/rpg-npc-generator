@@ -26,6 +26,12 @@ function _build_run_down {
   docker compose down
 }
 
+function _test_cmd {
+  . .env
+  _dc -e POSTGRES_DB="${POSTGRES_DB}_test" web "${@}"
+}
+
+
 # -----------------------------------------------------------------------------
 
 function cmd {
@@ -67,13 +73,19 @@ function quality {
 }
 
 function test {
-  # Run test suite
-  cmd pytest tests/ "${@}"
+  # Run migrations
+  _test_cmd flask db migrate
+
+  # Run all tests
+  _test_cmd pytest tests/ "${@}"
 }
 
 function test:coverage {
+  # Run migrations
+  _test_cmd flask db migrate
+
   # Get test coverage
-  cmd pytest --cov tests/ --cov-report term-missing "${@}"
+  _test_cmd pytest --cov tests/ --cov-report term-missing "${@}"
 }
 
 function shell {

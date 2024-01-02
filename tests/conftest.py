@@ -1,24 +1,15 @@
 import pytest
 
-from config import settings
 from npcgen import create_app
 
 
 @pytest.fixture
 def app():
-    db_uri = settings.SQLALCHEMY_DATABASE_URI
+    app = create_app()
 
-    if "?" in db_uri:
-        db_uri = db_uri.replace("?", "_test?")
-    else:
-        db_uri = f"{db_uri}_test"
-
-    app = create_app(
-        {
-            "DEBUG": False,
-            "TESTING": True,
-            "SQLALCHEMY_DATABASE_URI": db_uri,
-        }
+    app.config.update(
+        DEBUG=False,
+        TESTING=True,
     )
 
     yield app
