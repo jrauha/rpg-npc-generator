@@ -1,6 +1,7 @@
 import pytest
 
 from npcgen import create_app
+from npcgen.auth.models import User
 from npcgen.extensions import db
 
 
@@ -11,6 +12,7 @@ def app():
     app.config.update(
         DEBUG=False,
         TESTING=True,
+        WTF_CSRF_ENABLED=False,
     )
 
     yield app
@@ -33,3 +35,22 @@ def session(app):
         yield db.session
         db.session.remove()
         db.drop_all()
+
+
+@pytest.fixture
+def user_fixture(session):
+    from npcgen.auth.daos import UserDao
+
+    test_admin = User(
+        username="admin",
+        email="admin@example.org",
+        password="password1",
+        superuser=True,
+    )
+
+    user_dao = UserDao(session)
+    user = user_dao.create_user(test_admin)
+
+    yield user
+
+    user_dao.delete_user(user.id)

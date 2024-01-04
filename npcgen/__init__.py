@@ -1,7 +1,7 @@
 from flask import Flask
 
-from npcgen import routes
-from npcgen.extensions import db
+from .auth import views as auth_views
+from .extensions import db
 
 
 def create_app():
@@ -11,6 +11,6 @@ def create_app():
 
     db.init_app(app)
 
-    app.register_blueprint(routes.bp)
+    app.register_blueprint(auth_views.bp, name="auth")
 
     return app

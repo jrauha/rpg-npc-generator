@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="container">
+  <div class="columns is-centered mt-6">
+    <div class="column is-half">
+      <h1 class="title">Account</h1>
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <ul class="list mt-3">
+        <li>
+          <a href="{{ url_for('auth.logout') }}">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
