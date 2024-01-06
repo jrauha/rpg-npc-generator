@@ -5,11 +5,10 @@ def create_record(cur, table_name, **kwargs):
     columns = ", ".join(kwargs.keys())
     values = ", ".join([":" + sub for sub in kwargs.keys()])
     query = text(
-        f"INSERT INTO {table_name} ({columns}) VALUES ({values}) RETURNING id"
+        f"INSERT INTO {table_name} ({columns}) VALUES ({values}) RETURNING *"
     )
     result = cur.execute(query, kwargs)
-    id = result.fetchone()[0]
-    return id
+    return result.fetchone()
 
 
 def read_records(cur, table_name):
