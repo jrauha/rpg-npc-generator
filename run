@@ -72,6 +72,11 @@ function quality {
   lint
 }
 
+function test:unit {
+  # Run unit tests
+  cmd pytest tests/unit/ "${@}"
+}
+
 function test {
   # Run migrations
   _test_cmd flask db migrate
