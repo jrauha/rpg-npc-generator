@@ -23,7 +23,7 @@
 
     <div id="main-navbar" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="#">Gallery</a>
+        <a class="navbar-item" href="{{ url_for('characters.characters') }}">Gallery</a>
       </div>
 
       <div class="navbar-end">
@@ -36,7 +36,7 @@
               </span>
               <span>Account</span>
             </a>
-            <a class="button is-primary" href="#">
+            <a class="button is-primary" href="{{ url_for('characters.generate') }}">
               <span class="icon">
                 <i class="fas fa-wand-magic-sparkles"></i>
               </span>
