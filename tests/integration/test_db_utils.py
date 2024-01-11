@@ -11,6 +11,7 @@ from npcgen.core.db_utils import (
     read_record_by_attr,
     read_record_by_id,
     read_records,
+    record_exists,
     update_record,
 )
 
@@ -84,6 +85,16 @@ def test_read_record_by_attr(session, temp_test_table):
     record = read_record_by_attr(session, table_name, attr, value)
 
     assert record is not None
+
+
+def test_record_exists(session, temp_test_table):
+    table_name = temp_test_table
+    attr = "column1"
+    value = "value1"
+
+    exists = record_exists(session, table_name, attr, value)
+
+    assert exists is True
 
 
 def test_read_random_record(session, temp_test_table):

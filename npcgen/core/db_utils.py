@@ -23,6 +23,16 @@ def read_record_by_id(cur, table_name, record_id):
     return query.fetchone()
 
 
+def record_exists(cur, table_name, attr, value):
+    query = cur.execute(
+        text(
+            f"SELECT EXISTS(SELECT 1 FROM {table_name} WHERE {attr} = :value)"
+        ),
+        {"value": value},
+    )
+    return query.fetchone()[0]
+
+
 def read_record_by_attr(cur, table_name, attr, value):
     query = cur.execute(
         text(f"SELECT * FROM {table_name} WHERE {attr} = :value"),
