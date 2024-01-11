@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-6 is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column is-two-thirds">
+      <h1 class="title is-3 mt-3 mb-2">{{ character.name }}</h1>
+      <p class="mb-4">
+        <span>Level {{ character.level }} {{ character.race_name }}, {{ character.class_name or "No class" }}, {{
+          character.alignment_name }} alignment
+      </p>
+      <hr class="my-3" />
+      <div class="columns is-mobile m-0">
+        <div class="column p-0 has-text-centered">
+          <div class="is-flex is-flex-direction-column">
+            <span class="has-text-weight-bold">STR</span>
+            <span>{{ character.strength | delta }}</span>
+          </div>
+        </div>
+        <div class="column p-0 has-text-centered">
+          <div class="is-flex is-flex-direction-column">
+            <span class="has-text-weight-bold">DEX</span>
+            <span>{{ character.dexterity | delta }}</span>
+          </div>
+        </div>
+        <div class="column p-0 has-text-centered">
+          <div class="is-flex is-flex-direction-column">
+            <span class="has-text-weight-bold">CON</span>
+            <span>{{ character.constitution | delta }}</span>
+          </div>
+        </div>
+        <div class="column p-0 has-text-centered">
+          <div class="is-flex is-flex-direction-column">
+            <span class="has-text-weight-bold">INT</span>
+            <span>{{ character.intelligence | delta }}</span>
+          </div>
+        </div>
+        <div class="column p-0 has-text-centered">
+          <div class="is-flex is-flex-direction-column">
+            <span class="has-text-weight-bold">WIS</span>
+            <span>{{ character.wisdom | delta }}</span>
+          </div>
+        </div>
+        <div class="column p-0 has-text-centered">
+          <div class="is-flex is-flex-direction-column">
+            <span class="has-text-weight-bold">CHA</span>
+            <span>{{ character.charisma | delta }}</span>
+          </div>
+        </div>
+      </div>
+      <hr class="my-3" />
+      <p>
+        <span class="has-text-weight-semibold">Armor class:</span> {{ character.armor_class }}
+      </p>
+      <p>
+        <span class="has-text-weight-semibold">Hit points:</span> {{ character.hit_points }}
+      </p>
+      <p>
+        <span class="has-text-weight-semibold">Saving throws:</span>
+        <i>Fortitude save</i> {{ character.fortitude_save | delta }}
+        <i>Reflex save</i> {{ character.reflex_save | delta }}
+        <i>Will save</i> {{ character.will_save | delta }}
+      </p>
+      <p>
+        <span class="has-text-weight-semibold">Skills:</span>
+        {% for skill in character.skills %}
+        <span>{{ skill.name }} {{ skill.proficiency | delta }}</span>
+        {% endfor %}
+      </p>
+      <p>
+        <hr class="my-3" />
+      <h3 class="title is-5 mb-3">Items</h3>
+      <ul>
+        {% for item in character.items %}
+        <li><span class="has-text-weight-bold">{{ item.item_type }}</span> <span class="is-italic">{{ item.name
+            }}</span> {{ item.proficiency | delta }} {{ item.damage }} {{
+          item.damage_type or ""}}<br />{{ item.traits | join(', ') }}
+        </li>
+        {% endfor %}
+      </ul>
+      </p>
+      <hr class="my-3" />
+      <p>
+      <h3 class="title is-5 mb-3">Background</h3>
+      <div style="white-space: pre-wrap;">{{ character.backstory }}</div>
+      </p>
+      <p>
+      <h3 class="title is-5 mt-3 mb-3">Plot hooks</h3>
+      <div style="white-space: pre-wrap;">{{ character.plot_hook }}</div>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

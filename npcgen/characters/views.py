@@ -1,7 +1,7 @@
 import json
 import os
 
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 from ..auth.decorators import login_required
 from ..extensions import db
@@ -19,6 +19,11 @@ character_template_service = CharacterTemplateService(
 )
 
 
+@bp.app_template_filter()
+def delta(num):
+    return f"+{num}" if not num or num > 0 else num
+
+
 @bp.route("/")
 def index():
     return "TODO"
@@ -31,7 +36,17 @@ def characters():
 
 @bp.route("/character/<int:character_id>")
 def character_details(character_id):
-    return "TODO"
+    character = character_dao.get_character(
+        character_id, populate_items=True, populate_skills=True
+    )
+
+    if character is None:
+        return "Character not found", 404
+
+    return render_template(
+        "characters/details.html",
+        character=character,
+    )
 
 
 @bp.route("/generate", methods=["GET", "POST"])

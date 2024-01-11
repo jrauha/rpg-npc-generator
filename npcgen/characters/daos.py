@@ -1,12 +1,57 @@
 from sqlalchemy import text
 
-from ..core.db_utils import create_record, read_record_by_attr, record_exists
-from .models import Character, Item, Skill
+from ..core.db_utils import (
+    create_record,
+    delete_record,
+    read_record_by_attr,
+    record_exists,
+)
+from .models import Character, CharacterItem, CharacterSkill, Item, Skill
 
 
 class CharacterDao:
     def __init__(self, session):
         self.session = session
+
+    def get_character(self, id, populate_items=False, populate_skills=False):
+        record = self.session.execute(
+            text(
+                """
+            SELECT
+            ch.*,
+            a.id alignment_id,
+            a.name alignment_name,
+            cc.id class_id,
+            cc.name class_name,
+            r.id race_id,
+            r.name race_name,
+            t.id AS template_id,
+            t.name AS template_name
+            FROM character ch
+            LEFT JOIN character_class cc ON
+            cc.id = class_id
+            JOIN race r ON
+            r.id = race_id
+            JOIN alignment a ON
+            a.id = alignment_id
+            LEFT JOIN character t ON
+            t.id = ch.template_id
+            WHERE ch.id = :id
+            """
+            ),
+            {"id": id},
+        ).fetchone()
+
+        if record is None:
+            return None
+
+        character = self._map_record_to_character(record)
+        if populate_items:
+            character.items = self.get_character_items(id)
+        if populate_skills:
+            character.skills = self.get_character_skills(id)
+
+        return character
 
     def create_character(self, character):
         character_dict = self._character_to_dict(character)
@@ -29,6 +74,10 @@ class CharacterDao:
         self.session.commit()
         return character_id
 
+    def delete_character(self, character_id):
+        delete_record(self.session, "character", character_id)
+        self.session.commit()
+
     def character_with_name_exists(self, name):
         return record_exists(self.session, "character", "name", name)
 
@@ -42,6 +91,29 @@ class CharacterDao:
         )
         self.session.commit()
 
+    def get_character_items(self, character_id):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            i.id,
+            i.name,
+            i.item_type,
+            i.damage,
+            i.damage_type,
+            i.traits,
+            ci.proficiency
+            FROM item i
+            JOIN character_item ci ON
+            ci.item_id = i.id
+            WHERE ci.character_id = :character_id
+            ORDER BY i.item_type, i.name
+            """
+            ),
+            {"character_id": character_id},
+        )
+        return [self._map_record_to_item(record) for record in records]
+
     def add_skill_to_character(self, character_id, skill_id, proficiency):
         create_record(
             self.session,
@@ -51,6 +123,26 @@ class CharacterDao:
             proficiency=proficiency,
         )
         self.session.commit()
+
+    def get_character_skills(self, character_id):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            s.id,
+            s.name,
+            s.description,
+            cs.proficiency
+            FROM skill s
+            JOIN character_skill cs ON
+            cs.skill_id = s.id
+            WHERE cs.character_id = :character_id
+            ORDER BY s.name
+            """
+            ),
+            {"character_id": character_id},
+        )
+        return [self._map_record_to_skill(record) for record in records]
 
     def _character_to_dict(self, character):
         return {
@@ -115,6 +207,29 @@ class CharacterDao:
             is_template=record.is_template,
         )
 
+    def _map_record_to_skill(self, record):
+        return CharacterSkill(
+            Skill(
+                id=record.id,
+                name=record.name,
+                description=record.description,
+            ),
+            proficiency=record.proficiency,
+        )
+
+    def _map_record_to_item(self, record):
+        return CharacterItem(
+            item=Item(
+                id=record.id,
+                name=record.name,
+                item_type=record.item_type,
+                damage=record.damage,
+                damage_type=record.damage_type,
+                traits=record.traits,
+            ),
+            proficiency=record.proficiency,
+        )
+
 
 class ItemDao:
     def __init__(self, session):
@@ -124,7 +239,14 @@ class ItemDao:
         query = self.session.execute(
             text(
                 """
-            SELECT * FROM item
+            SELECT
+            id,
+            name,
+            item_type,
+            damage,
+            damage_type,
+            traits
+            FROM item
             WHERE name = :name
             AND damage = :damage
             AND damage_type = :damage_type
