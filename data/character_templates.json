@@ -1,0 +1,6532 @@
+[
+  {
+    "name": "Acolyte of Nethys",
+    "race_id": 1,
+    "group": "Devotees",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 2,
+    "dexterity": 2,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 15,
+    "hit_points": 16,
+    "speed": 25,
+    "fortitude_save": 2,
+    "reflex_save": 5,
+    "will_save": 9,
+    "perception": 7,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 4,
+        "damage": "1d4+1",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 5,
+        "damage": "1d8",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Acrobat",
+    "race_id": 1,
+    "group": "Performers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Circus Lore",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 1,
+    "dexterity": 4,
+    "charisma": 1,
+    "constitution": 2,
+    "wisdom": 0,
+    "armor_class": 18,
+    "hit_points": 28,
+    "speed": 30,
+    "fortitude_save": 8,
+    "reflex_save": 12,
+    "will_save": 4,
+    "perception": 6,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 10,
+        "damage": "1d4+4",
+        "damage_type": null,
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "foot",
+        "proficiency": 10,
+        "damage": "1d4+4",
+        "damage_type": "B",
+        "traits": ["agile", "finesse", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 11,
+        "damage": "1d4+4",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Adept",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Scribing Lore",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 5,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 3,
+    "dexterity": 2,
+    "charisma": 1,
+    "constitution": 0,
+    "wisdom": 2,
+    "armor_class": 14,
+    "hit_points": 8,
+    "speed": 25,
+    "fortitude_save": 2,
+    "reflex_save": 4,
+    "will_save": 6,
+    "perception": 4,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 6,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "journal",
+        "proficiency": 6,
+        "damage": "1d6",
+        "damage_type": "B",
+        "traits": ["nonlethal", "thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Advisor",
+    "race_id": 1,
+    "group": "Courtiers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 11,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 0,
+    "dexterity": 2,
+    "charisma": 4,
+    "constitution": 2,
+    "wisdom": 4,
+    "armor_class": 21,
+    "hit_points": 56,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 11,
+    "will_save": 15,
+    "perception": 14,
+    "items": [
+      {
+        "name": "whip",
+        "proficiency": 11,
+        "damage": "1d4+2",
+        "damage_type": "S",
+        "traits": ["disarm", "finesse", "nonlethal", "reach", "trip"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 11,
+        "damage": "1d4+2",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Antipaladin",
+    "race_id": 1,
+    "group": "Villains",
+    "alignment_id": 9,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 3,
+    "constitution": 3,
+    "wisdom": 1,
+    "armor_class": 25,
+    "hit_points": 75,
+    "speed": 20,
+    "fortitude_save": 14,
+    "reflex_save": 10,
+    "will_save": 12,
+    "perception": 10,
+    "items": [
+      {
+        "name": "greataxe",
+        "proficiency": 15,
+        "damage": "1d12+10",
+        "damage_type": "S",
+        "traits": ["sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "javelin",
+        "proficiency": 12,
+        "damage": "1d6+10",
+        "damage_type": "P",
+        "traits": ["thrown 30 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Apothecary",
+    "race_id": 1,
+    "group": "Healers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Crafting",
+        "proficiency": 5,
+        "note": "+8 for alchemy and medication"
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 3,
+    "dexterity": 1,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 14,
+    "hit_points": 9,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 3,
+    "will_save": 5,
+    "perception": 5,
+    "items": [
+      {
+        "name": "stone pestle",
+        "proficiency": 4,
+        "damage": "1d6",
+        "damage_type": null,
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 5,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "acid flask",
+        "proficiency": 5,
+        "damage": ",",
+        "damage_type": null,
+        "traits": ["range increment 20 feet", "splash"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Apprentice",
+    "race_id": 1,
+    "group": "Tradespeople",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Geography Lore",
+        "proficiency": 5,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 3,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 0,
+    "armor_class": 15,
+    "hit_points": 8,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 6,
+    "will_save": 2,
+    "perception": 2,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 3,
+        "damage": "1d4+1",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 4,
+        "damage": "1d4+1",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Archer Sentry",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 4,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 19,
+    "hit_points": 30,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 10,
+    "will_save": 7,
+    "perception": 11,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 10,
+        "damage": "1d6+3",
+        "damage_type": "S",
+        "traits": ["agile", "finesse", "versatile P"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 10,
+        "damage": "1d8+2",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Assassin",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 8,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 19,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 14,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 2,
+    "dexterity": 5,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 2,
+    "armor_class": 26,
+    "hit_points": 130,
+    "speed": 25,
+    "fortitude_save": 12,
+    "reflex_save": 19,
+    "will_save": 14,
+    "perception": 16,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 18,
+        "damage": "1d6+8",
+        "damage_type": "P",
+        "traits": ["deadly 1d8", "disarm", "finesse", "magical"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite shortbow",
+        "proficiency": 20,
+        "damage": "2d6+4",
+        "damage_type": "P",
+        "traits": [
+          "deadly 2d10",
+          "magical",
+          "propulsive",
+          "range increment 60 feet",
+          "reload 0"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Astronomer",
+    "race_id": 1,
+    "group": "Scholars",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Astronomy Lore",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 3,
+    "armor_class": 15,
+    "hit_points": 23,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 5,
+    "will_save": 9,
+    "perception": 10,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 6,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Bandit",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Forest Lore",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 19,
+    "hit_points": 30,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 9,
+    "will_save": 6,
+    "perception": 6,
+    "items": [
+      {
+        "name": "hatchet",
+        "proficiency": 9,
+        "damage": "1d6+5",
+        "damage_type": "S",
+        "traits": ["agile", "sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sling",
+        "proficiency": 9,
+        "damage": "1d6+3",
+        "damage_type": null,
+        "traits": ["propulsive", "range increment 50 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      },
+      {
+        "name": "hatchet",
+        "proficiency": 9,
+        "damage": "1d6+5",
+        "damage_type": "S",
+        "traits": ["agile", "sweep", "thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Barkeep",
+    "race_id": 1,
+    "group": "Publicans",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Alcohol Lore",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 3,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 0,
+    "charisma": 3,
+    "constitution": 2,
+    "wisdom": 1,
+    "armor_class": 14,
+    "hit_points": 25,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 3,
+    "will_save": 6,
+    "perception": 6,
+    "items": [
+      {
+        "name": "sap",
+        "proficiency": 6,
+        "damage": "1d6+3",
+        "damage_type": null,
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 6,
+        "damage": "1d4+3",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "pewter mug",
+        "proficiency": 3,
+        "damage": "1d4+3",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Barrister",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 3,
+    "dexterity": 1,
+    "charisma": 4,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 13,
+    "hit_points": 8,
+    "speed": 25,
+    "fortitude_save": 3,
+    "reflex_save": 3,
+    "will_save": 12,
+    "perception": 6,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 4,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Beast Tamer",
+    "race_id": 1,
+    "group": "Performers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Circus Lore",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 2,
+    "constitution": 2,
+    "wisdom": 4,
+    "armor_class": 20,
+    "hit_points": 54,
+    "speed": 25,
+    "fortitude_save": 10,
+    "reflex_save": 7,
+    "will_save": 12,
+    "perception": 12,
+    "items": [
+      {
+        "name": "whip",
+        "proficiency": 11,
+        "damage": "1d4+5",
+        "damage_type": "S",
+        "traits": ["disarm", "nonlethal", "reach", "trip"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Beggar",
+    "race_id": 1,
+    "group": "Downtrodden",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 2,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 1,
+    "constitution": 2,
+    "wisdom": 1,
+    "armor_class": 15,
+    "hit_points": 10,
+    "speed": 25,
+    "fortitude_save": 4,
+    "reflex_save": 7,
+    "will_save": 3,
+    "perception": 3,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 5,
+        "damage": "1d4+1",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "rock",
+        "proficiency": 5,
+        "damage": "1d4+1",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Bodyguard",
+    "race_id": 1,
+    "group": "Mercenaries",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 2,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 1,
+    "armor_class": 16,
+    "hit_points": 25,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 7,
+    "will_save": 4,
+    "perception": 8,
+    "items": [
+      {
+        "name": "greatclub",
+        "proficiency": 7,
+        "damage": "1d10+4",
+        "damage_type": null,
+        "traits": ["backswing", "shove"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sap",
+        "proficiency": 7,
+        "damage": "1d6+4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Bosun",
+    "race_id": 1,
+    "group": "Seafarers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Sailing Lore",
+        "proficiency": 11,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 1,
+    "armor_class": 19,
+    "hit_points": 45,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 11,
+    "will_save": 8,
+    "perception": 8,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 13,
+        "damage": "1d6+5",
+        "damage_type": null,
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "naval pike",
+        "proficiency": 11,
+        "damage": "1d6+5",
+        "damage_type": null,
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 13,
+        "damage": "1d4+5",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "naval pike",
+        "proficiency": 13,
+        "damage": "1d6+5",
+        "damage_type": "P",
+        "traits": ["thrown 20 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Bounty Hunter",
+    "race_id": 1,
+    "group": "Mercenaries",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 21,
+    "hit_points": 60,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 12,
+    "will_save": 12,
+    "perception": 14,
+    "items": [
+      {
+        "name": "falchion",
+        "proficiency": 13,
+        "damage": "1d10+6",
+        "damage_type": "S",
+        "traits": ["forceful", "sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 14,
+        "damage": "1d10+5",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Burglar",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 12,
+        "note": "can Disable traps that require master proficiency"
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 1,
+    "dexterity": 4,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 21,
+    "hit_points": 60,
+    "speed": 30,
+    "fortitude_save": 7,
+    "reflex_save": 12,
+    "will_save": 10,
+    "perception": 10,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 14,
+        "damage": "1d6+6",
+        "damage_type": null,
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sap",
+        "proficiency": 12,
+        "damage": "1d6+4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite shortbow",
+        "proficiency": 14,
+        "damage": "1d6+4",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "propulsive",
+          "range increment 60 feet",
+          "reload 0"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Captain of the Guard",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Warfare Lore",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 5,
+    "intelligence": 0,
+    "dexterity": 0,
+    "charisma": 3,
+    "constitution": 2,
+    "wisdom": 3,
+    "armor_class": 24,
+    "hit_points": 95,
+    "speed": 20,
+    "fortitude_save": 14,
+    "reflex_save": 12,
+    "will_save": 15,
+    "perception": 15,
+    "items": [
+      {
+        "name": "longsword",
+        "proficiency": 18,
+        "damage": "1d8+11",
+        "damage_type": "S",
+        "traits": ["magical", "versatile P"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 12,
+        "damage": "1d8+6",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Charlatan",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 2,
+    "dexterity": 3,
+    "charisma": 4,
+    "constitution": 0,
+    "wisdom": 1,
+    "armor_class": 18,
+    "hit_points": 40,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 8,
+    "will_save": 10,
+    "perception": 6,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 10,
+        "damage": "1d6+2",
+        "damage_type": null,
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sap",
+        "proficiency": 7,
+        "damage": "1d6+2",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Charming Scoundrel",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 3,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Theater Lore",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 1,
+    "dexterity": 4,
+    "charisma": 3,
+    "constitution": 2,
+    "wisdom": 0,
+    "armor_class": 21,
+    "hit_points": 54,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 13,
+    "will_save": 9,
+    "perception": 8,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 12,
+        "damage": "1d6+6",
+        "damage_type": null,
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sap",
+        "proficiency": 9,
+        "damage": "1d6+2",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 12,
+        "damage": "1d6+2",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Chronicler",
+    "race_id": 1,
+    "group": "Explorers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Map Lore",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Scribing Lore",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 14,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 4,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 18,
+    "hit_points": 45,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 9,
+    "will_save": 9,
+    "perception": 14,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 7,
+        "damage": "1d4+2",
+        "damage_type": null,
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "staff",
+        "proficiency": 7,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 7,
+        "damage": "1d8",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Commoner",
+    "race_id": 1,
+    "group": "Downtrodden",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Lore",
+        "proficiency": 6,
+        "note": "any one related to their trade"
+      },
+      {
+        "name": "Society",
+        "proficiency": 2,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 1,
+    "armor_class": 13,
+    "hit_points": 10,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 3,
+    "will_save": 3,
+    "perception": 3,
+    "items": [
+      {
+        "name": "sickle",
+        "proficiency": 5,
+        "damage": "1d4+2",
+        "damage_type": "S",
+        "traits": ["agile", "trip"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "rock",
+        "proficiency": 3,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Cult Leader",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 7,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Cult Lore",
+        "proficiency": 19,
+        "note": "applies to the leader's own cult"
+      },
+      {
+        "name": "Deception",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 13,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 4,
+    "charisma": 5,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 23,
+    "hit_points": 95,
+    "speed": 25,
+    "fortitude_save": 12,
+    "reflex_save": 15,
+    "will_save": 18,
+    "perception": 14,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 13,
+        "damage": "1d4+6",
+        "damage_type": "B",
+        "traits": ["magical", "two-hand d8"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Cultist",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Cult Lore",
+        "proficiency": 8,
+        "note": "applies to the cultist's own cult"
+      },
+      {
+        "name": "Deception",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 6,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 3,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 1,
+    "armor_class": 17,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 8,
+    "will_save": 4,
+    "perception": 4,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 7,
+        "damage": "1d4+4",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 6,
+        "damage": "1d4+4",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Dancer",
+    "race_id": 1,
+    "group": "Performers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 13,
+        "note": "+15 when dancing"
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Theater Lore",
+        "proficiency": 5,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 4,
+    "constitution": 1,
+    "wisdom": 0,
+    "armor_class": 16,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 8,
+    "will_save": 3,
+    "perception": 3,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 8,
+        "damage": "1d4+3",
+        "damage_type": null,
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "foot",
+        "proficiency": 8,
+        "damage": "1d4+3",
+        "damage_type": null,
+        "traits": ["agile", "finesse", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 8,
+        "damage": "1d4+3",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Demonologist",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 9,
+    "is_template": true,
+    "level": 7,
+    "skills": [
+      {
+        "name": "Academia Lore",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Arcana",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Demon Lore",
+        "proficiency": 18,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 11,
+        "note": "+13 with demons"
+      },
+      {
+        "name": "Religion",
+        "proficiency": 15,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 4,
+    "armor_class": 22,
+    "hit_points": 100,
+    "speed": 25,
+    "fortitude_save": 13,
+    "reflex_save": 12,
+    "will_save": 15,
+    "perception": 15,
+    "items": [
+      {
+        "name": "longspear",
+        "proficiency": 17,
+        "damage": "1d8+9",
+        "damage_type": "P",
+        "traits": ["magical", "reach"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Despot",
+    "race_id": 1,
+    "group": "Villains",
+    "alignment_id": 7,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Warfare Lore",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 4,
+    "dexterity": 2,
+    "charisma": 4,
+    "constitution": 0,
+    "wisdom": 2,
+    "armor_class": 19,
+    "hit_points": 56,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 9,
+    "will_save": 13,
+    "perception": 11,
+    "items": [
+      {
+        "name": "spiked gauntlet",
+        "proficiency": 11,
+        "damage": "1d4+4",
+        "damage_type": "P",
+        "traits": ["agile"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Dockhand",
+    "race_id": 1,
+    "group": "Laborers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 0,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Labor Lore",
+        "proficiency": 4,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 1,
+    "constitution": 3,
+    "wisdom": 1,
+    "armor_class": 14,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 5,
+    "will_save": 3,
+    "perception": 3,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 7,
+        "damage": "1d4+3",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "bottle",
+        "proficiency": 5,
+        "damage": "1d6+3",
+        "damage_type": "B",
+        "traits": ["agile", "thrown 20 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Drunkard",
+    "race_id": 1,
+    "group": "Publicans",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Alcohol Lore",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 1,
+    "dexterity": 2,
+    "charisma": 2,
+    "constitution": 4,
+    "wisdom": 0,
+    "armor_class": 17,
+    "hit_points": 40,
+    "speed": 25,
+    "fortitude_save": 10,
+    "reflex_save": 8,
+    "will_save": 6,
+    "perception": 6,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 9,
+        "damage": "1d6+3",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "pewter mug",
+        "proficiency": 8,
+        "damage": "1d4+3",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Executioner",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 5,
+    "intelligence": 1,
+    "dexterity": 2,
+    "charisma": 2,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 23,
+    "hit_points": 105,
+    "speed": 25,
+    "fortitude_save": 15,
+    "reflex_save": 12,
+    "will_save": 14,
+    "perception": 12,
+    "items": [
+      {
+        "name": "greataxe",
+        "proficiency": 16,
+        "damage": "1d12+9",
+        "damage_type": "S",
+        "traits": ["magical", "sweep"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "False Priest",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 6,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 4,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 21,
+    "hit_points": 51,
+    "speed": 25,
+    "fortitude_save": 11,
+    "reflex_save": 12,
+    "will_save": 10,
+    "perception": 10,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 12,
+        "damage": "1d6+8",
+        "damage_type": "P",
+        "traits": ["deadly 1d8", "disarm", "finesse"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 12,
+        "damage": "1d6+4",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Farmer",
+    "race_id": 1,
+    "group": "Laborers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 0,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Farming Lore",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 4,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 14,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 5,
+    "will_save": 4,
+    "perception": 6,
+    "items": [
+      {
+        "name": "pitchfork",
+        "proficiency": 6,
+        "damage": "1d6+3",
+        "damage_type": "P",
+        "traits": ["reach 10 feet"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "apple",
+        "proficiency": 5,
+        "damage": "1d4+3",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal", "thrown 20 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Fence",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Accounting Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Acrobatics",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 15,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 3,
+    "charisma": 4,
+    "constitution": 0,
+    "wisdom": 2,
+    "armor_class": 20,
+    "hit_points": 70,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 12,
+    "will_save": 15,
+    "perception": 11,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 12,
+        "damage": "1d6+5",
+        "damage_type": null,
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 12,
+        "damage": "1d4+5",
+        "damage_type": "P",
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 12,
+        "damage": "1d4+2",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Gang Leader",
+    "race_id": 1,
+    "group": "Villains",
+    "alignment_id": 9,
+    "is_template": true,
+    "level": 7,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 15,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 2,
+    "dexterity": 4,
+    "charisma": 4,
+    "constitution": 2,
+    "wisdom": 1,
+    "armor_class": 26,
+    "hit_points": 104,
+    "speed": 30,
+    "fortitude_save": 13,
+    "reflex_save": 17,
+    "will_save": 10,
+    "perception": 14,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 18,
+        "damage": "1d6+10",
+        "damage_type": "P",
+        "traits": ["agile", "magical", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sling",
+        "proficiency": 18,
+        "damage": "1d6+8",
+        "damage_type": "B",
+        "traits": ["propulsive", "range increment 50 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Grave Robber",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Crafting",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 2,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 2,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 6,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 3,
+    "dexterity": 2,
+    "charisma": 1,
+    "constitution": 2,
+    "wisdom": 2,
+    "armor_class": 17,
+    "hit_points": 18,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 7,
+    "will_save": 5,
+    "perception": 5,
+    "items": [
+      {
+        "name": "shovel",
+        "proficiency": 6,
+        "damage": "1d6+1",
+        "damage_type": "B",
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "alchemical bomb",
+        "proficiency": 7,
+        "damage": ",",
+        "damage_type": null,
+        "traits": ["range increment 20 feet", "splash"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Gravedigger",
+    "race_id": 1,
+    "group": "Laborers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Graveyard Lore",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 4,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 15,
+    "hit_points": 22,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 4,
+    "will_save": 7,
+    "perception": 6,
+    "items": [
+      {
+        "name": "shovel",
+        "proficiency": 9,
+        "damage": "1d4+4",
+        "damage_type": "B",
+        "traits": [],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Guard",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 3,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 2,
+    "charisma": 1,
+    "constitution": 2,
+    "wisdom": 2,
+    "armor_class": 18,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 5,
+    "will_save": 5,
+    "perception": 7,
+    "items": [
+      {
+        "name": "club",
+        "proficiency": 9,
+        "damage": "1d6+4",
+        "damage_type": null,
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sap",
+        "proficiency": 9,
+        "damage": "1d6+4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 7,
+        "damage": "1d8",
+        "damage_type": null,
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      },
+      {
+        "name": "club",
+        "proficiency": 7,
+        "damage": "1d6+4",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Guide",
+    "race_id": 1,
+    "group": "Explorers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Scouting Lore",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 12,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 3,
+    "armor_class": 21,
+    "hit_points": 60,
+    "speed": 25,
+    "fortitude_save": 12,
+    "reflex_save": 11,
+    "will_save": 14,
+    "perception": 14,
+    "items": [
+      {
+        "name": "greataxe",
+        "proficiency": 12,
+        "damage": "1d12+6",
+        "damage_type": "S",
+        "traits": ["sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite shortbow",
+        "proficiency": 9,
+        "damage": "1d6+2",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "propulsive",
+          "range increment 60 feet",
+          "reload 0"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Guildmaster",
+    "race_id": 1,
+    "group": "Tradespeople",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 8,
+    "skills": [
+      {
+        "name": "Architecture Lore",
+        "proficiency": 25,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Bureaucracy Lore",
+        "proficiency": 19,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 25,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 24,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 22,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 21,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 3,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 26,
+    "hit_points": 135,
+    "speed": 25,
+    "fortitude_save": 14,
+    "reflex_save": 14,
+    "will_save": 17,
+    "perception": 16,
+    "items": [
+      {
+        "name": "light hammer",
+        "proficiency": 16,
+        "damage": "2d6+5",
+        "damage_type": "B",
+        "traits": ["agile"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "light hammer",
+        "proficiency": 14,
+        "damage": "2d6+5",
+        "damage_type": "B",
+        "traits": ["agile", "magical", "thrown 20 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Harbormaster",
+    "race_id": 1,
+    "group": "Magistrates",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Fishing Lore",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Sailing Lore",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 2,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 1,
+    "armor_class": 17,
+    "hit_points": 46,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 9,
+    "will_save": 8,
+    "perception": 6,
+    "items": [
+      {
+        "name": "hatchet",
+        "proficiency": 13,
+        "damage": "1d6+7",
+        "damage_type": "S",
+        "traits": ["agile", "sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hatchet",
+        "proficiency": 11,
+        "damage": "1d6+7",
+        "damage_type": "S",
+        "traits": ["agile", "sweep", "thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Harrow Reader",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Fortune-Telling Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 10,
+        "note": "+11 when fortune-telling"
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 2,
+    "dexterity": 2,
+    "charisma": 3,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 13,
+    "hit_points": 9,
+    "speed": 25,
+    "fortitude_save": 3,
+    "reflex_save": 6,
+    "will_save": 10,
+    "perception": 7,
+    "items": [
+      {
+        "name": "sickle",
+        "proficiency": 7,
+        "damage": "1d4+1",
+        "damage_type": "S",
+        "traits": ["agile", "finesse", "trip"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Hellknight Armiger",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Hell Lore",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 3,
+    "armor_class": 22,
+    "hit_points": 75,
+    "speed": 20,
+    "fortitude_save": 12,
+    "reflex_save": 10,
+    "will_save": 10,
+    "perception": 11,
+    "items": [
+      {
+        "name": "war flail",
+        "proficiency": 13,
+        "damage": "1d10+6",
+        "damage_type": "B",
+        "traits": ["disarm", "sweep", "trip"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 10,
+        "damage": "1d8+4",
+        "damage_type": "P",
+        "traits": [
+          "deadly d10",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Hellknight Paravicar",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 11,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 21,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 23,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 21,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 16,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 2,
+    "charisma": 5,
+    "constitution": 2,
+    "wisdom": 3,
+    "armor_class": 30,
+    "hit_points": 145,
+    "speed": 25,
+    "fortitude_save": 19,
+    "reflex_save": 19,
+    "will_save": 24,
+    "perception": 20,
+    "items": [
+      {
+        "name": "morningstar",
+        "proficiency": 21,
+        "damage": "2d6+8",
+        "damage_type": "B",
+        "traits": ["magical", "versatile P"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 19,
+        "damage": "2d8+4",
+        "damage_type": "P",
+        "traits": ["magical", "range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Hunter",
+    "race_id": 1,
+    "group": "Foresters",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 7,
+    "skills": [
+      {
+        "name": "Forest Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 17,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 4,
+    "armor_class": 25,
+    "hit_points": 115,
+    "speed": 25,
+    "fortitude_save": 15,
+    "reflex_save": 17,
+    "will_save": 15,
+    "perception": 17,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 18,
+        "damage": "1d4+9",
+        "damage_type": null,
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "shortsword",
+        "proficiency": 18,
+        "damage": "1d6+9",
+        "damage_type": "P",
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 18,
+        "damage": "1d8+8",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "magical",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Innkeeper",
+    "race_id": 1,
+    "group": "Publicans",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Accounting Lore",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Cooking Lore",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 2,
+    "dexterity": 0,
+    "charisma": 3,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 14,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 3,
+    "will_save": 9,
+    "perception": 7,
+    "items": [
+      {
+        "name": "broom",
+        "proficiency": 7,
+        "damage": "1d4+2",
+        "damage_type": null,
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 7,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "ledger",
+        "proficiency": 5,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["nonlethal", "thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Jailer",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 20,
+    "hit_points": 45,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 10,
+    "will_save": 7,
+    "perception": 9,
+    "items": [
+      {
+        "name": "club",
+        "proficiency": 11,
+        "damage": "1d6+8",
+        "damage_type": "B",
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 10,
+        "damage": "1d8+4",
+        "damage_type": null,
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      },
+      {
+        "name": "club",
+        "proficiency": 10,
+        "damage": "1d6+6",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Judge",
+    "race_id": 1,
+    "group": "Magistrates",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 14,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 13,
+    "hit_points": 9,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 1,
+    "will_save": 14,
+    "perception": 8,
+    "items": [
+      {
+        "name": "gavel",
+        "proficiency": 4,
+        "damage": "1d4",
+        "damage_type": null,
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 4,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "gavel",
+        "proficiency": 3,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Librarian",
+    "race_id": 1,
+    "group": "Scholars",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Academia Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Arcana",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Library Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 1,
+    "constitution": 0,
+    "wisdom": 3,
+    "armor_class": 13,
+    "hit_points": 6,
+    "speed": 25,
+    "fortitude_save": 2,
+    "reflex_save": 3,
+    "will_save": 7,
+    "perception": 7,
+    "items": [
+      {
+        "name": "book",
+        "proficiency": 4,
+        "damage": "1d4",
+        "damage_type": null,
+        "traits": ["nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 3,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "book",
+        "proficiency": 5,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["nonlethal", "thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Mage for Hire",
+    "race_id": 1,
+    "group": "Mercenaries",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 2,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 1,
+    "armor_class": 17,
+    "hit_points": 31,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 9,
+    "will_save": 10,
+    "perception": 7,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 7,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Mastermind",
+    "race_id": 1,
+    "group": "Villains",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 17,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 3,
+    "charisma": 4,
+    "constitution": 0,
+    "wisdom": 2,
+    "armor_class": 21,
+    "hit_points": 54,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 11,
+    "will_save": 16,
+    "perception": 10,
+    "items": [
+      {
+        "name": "shortsword",
+        "proficiency": 13,
+        "damage": "1d6+6",
+        "damage_type": "S",
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 13,
+        "damage": "1d6+3",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Merchant",
+    "race_id": 1,
+    "group": "Tradespeople",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Mercantile Lore",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 2,
+    "dexterity": 0,
+    "charisma": 4,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 13,
+    "hit_points": 7,
+    "speed": 25,
+    "fortitude_save": 1,
+    "reflex_save": 2,
+    "will_save": 10,
+    "perception": 6,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 4,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal", "unarmed"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 4,
+        "damage": "1d8",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Miner",
+    "race_id": 1,
+    "group": "Laborers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 0,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Mining Lore",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 4,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 14,
+    "hit_points": 20,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 5,
+    "will_save": 4,
+    "perception": 6,
+    "items": [
+      {
+        "name": "pick",
+        "proficiency": 6,
+        "damage": "1d6+2",
+        "damage_type": "P",
+        "traits": ["fatal 1d10"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Monster Hunter",
+    "race_id": 1,
+    "group": "Mercenaries",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Monster Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 11,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 3,
+    "charisma": 1,
+    "constitution": 3,
+    "wisdom": 1,
+    "armor_class": 23,
+    "hit_points": 108,
+    "speed": 20,
+    "fortitude_save": 15,
+    "reflex_save": 11,
+    "will_save": 13,
+    "perception": 13,
+    "items": [
+      {
+        "name": "greataxe",
+        "proficiency": 15,
+        "damage": "1d12+8",
+        "damage_type": "S",
+        "traits": ["magical", "sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 14,
+        "damage": "1d8+6",
+        "damage_type": "P",
+        "traits": [
+          "deadly d10",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Navigator",
+    "race_id": 1,
+    "group": "Seafarers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Sailing Lore",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 18,
+    "hit_points": 28,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 8,
+    "will_save": 9,
+    "perception": 9,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 8,
+        "damage": "1d4+4",
+        "damage_type": "P",
+        "traits": ["agile", "finesse", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 8,
+        "damage": "1d4+4",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Necromancer",
+    "race_id": 1,
+    "group": "Mystics",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 4,
+    "dexterity": 3,
+    "charisma": 1,
+    "constitution": 2,
+    "wisdom": 3,
+    "armor_class": 20,
+    "hit_points": 58,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 12,
+    "will_save": 12,
+    "perception": 10,
+    "items": [
+      {
+        "name": "light mace",
+        "proficiency": 12,
+        "damage": "1d4+4",
+        "damage_type": "B",
+        "traits": ["agile", "finesse", "shove"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Noble",
+    "race_id": 1,
+    "group": "Courtiers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Gambling Lore",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 1,
+    "dexterity": 3,
+    "charisma": 4,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 18,
+    "hit_points": 45,
+    "speed": 25,
+    "fortitude_save": 6,
+    "reflex_save": 10,
+    "will_save": 11,
+    "perception": 11,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 12,
+        "damage": "1d6+5",
+        "damage_type": null,
+        "traits": ["deadly 1d8", "disarm", "finesse"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 12,
+        "damage": "1d4+5",
+        "damage_type": "B",
+        "traits": ["agile", "finesse", "nonlethal"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Palace Guard",
+    "race_id": 1,
+    "group": "Courtiers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 2,
+    "charisma": 2,
+    "constitution": 3,
+    "wisdom": 4,
+    "armor_class": 22,
+    "hit_points": 60,
+    "speed": 25,
+    "fortitude_save": 13,
+    "reflex_save": 8,
+    "will_save": 10,
+    "perception": 15,
+    "items": [
+      {
+        "name": "halberd",
+        "proficiency": 14,
+        "damage": "1d10+7",
+        "damage_type": null,
+        "traits": ["reach", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 12,
+        "damage": "1d4+7",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Pathfinder Field Agent",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Arcana",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Pathfinder Society Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 2,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 21,
+    "hit_points": 60,
+    "speed": 25,
+    "fortitude_save": 10,
+    "reflex_save": 13,
+    "will_save": 11,
+    "perception": 11,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 12,
+        "damage": "1d6+6",
+        "damage_type": "P",
+        "traits": ["deadly 1d8", "disarm"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "shortbow",
+        "proficiency": 12,
+        "damage": "1d6+2",
+        "damage_type": "P",
+        "traits": ["deadly d10", "range increment 60 feet", "reload 0"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Pathfinder Venture-Captain",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 2,
+    "is_template": true,
+    "level": 11,
+    "skills": [
+      {
+        "name": "Alcohol Lore",
+        "proficiency": 20,
+        "note": null
+      },
+      {
+        "name": "Bardic Lore",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 21,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 19,
+        "note": null
+      }
+    ],
+    "strength": 5,
+    "intelligence": 1,
+    "dexterity": 1,
+    "charisma": 4,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 32,
+    "hit_points": 195,
+    "speed": 20,
+    "fortitude_save": 22,
+    "reflex_save": 18,
+    "will_save": 19,
+    "perception": 20,
+    "items": [
+      {
+        "name": "warhammer",
+        "proficiency": 24,
+        "damage": "2d8+11",
+        "damage_type": "B",
+        "traits": ["magical", "shove"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 20,
+        "damage": "2d8+8",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "magical",
+          "range increment 100 feet",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Physician",
+    "race_id": 1,
+    "group": "Healers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 13,
+    "hit_points": 9,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 3,
+    "will_save": 8,
+    "perception": 6,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 5,
+        "damage": "1d4-1",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "medical textbook",
+        "proficiency": 5,
+        "damage": "1d4-1",
+        "damage_type": "B",
+        "traits": ["nonlethal", "thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Pirate",
+    "race_id": 1,
+    "group": "Seafarers",
+    "alignment_id": 6,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Sailing Lore",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 18,
+    "hit_points": 32,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 8,
+    "will_save": 6,
+    "perception": 6,
+    "items": [
+      {
+        "name": "cutlass",
+        "proficiency": 10,
+        "damage": "1d6+5",
+        "damage_type": null,
+        "traits": ["forceful", "sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 11,
+        "damage": "1d4+5",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 11,
+        "damage": "1d4+5",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Plague Doctor",
+    "race_id": 1,
+    "group": "Healers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Intimidation",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Plague Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 13,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 2,
+    "dexterity": 1,
+    "charisma": 2,
+    "constitution": 4,
+    "wisdom": 4,
+    "armor_class": 20,
+    "hit_points": 73,
+    "speed": 25,
+    "fortitude_save": 13,
+    "reflex_save": 8,
+    "will_save": 13,
+    "perception": 13,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 9,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 10,
+        "damage": "1d8",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Poacher",
+    "race_id": 1,
+    "group": "Foresters",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Crafting",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 19,
+    "hit_points": 30,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 10,
+    "will_save": 7,
+    "perception": 9,
+    "items": [
+      {
+        "name": "club",
+        "proficiency": 8,
+        "damage": "1d6+5",
+        "damage_type": "B",
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite shortbow",
+        "proficiency": 10,
+        "damage": "1d6+3",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "propulsive",
+          "range increment 60 feet",
+          "reload 0"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Priest of Pharasma",
+    "race_id": 1,
+    "group": "Devotees",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Diplomacy",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 12,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 21,
+    "hit_points": 80,
+    "speed": 25,
+    "fortitude_save": 11,
+    "reflex_save": 11,
+    "will_save": 14,
+    "perception": 14,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 13,
+        "damage": "1d6+5",
+        "damage_type": "P",
+        "traits": ["agile", "magical", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 13,
+        "damage": "1d6+5",
+        "damage_type": "P",
+        "traits": ["agile", "magical", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Prisoner",
+    "race_id": 1,
+    "group": "Downtrodden",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 1,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 1,
+    "armor_class": 17,
+    "hit_points": 17,
+    "speed": 25,
+    "fortitude_save": 4,
+    "reflex_save": 9,
+    "will_save": 6,
+    "perception": 6,
+    "items": [
+      {
+        "name": "shiv",
+        "proficiency": 7,
+        "damage": "1d4+3",
+        "damage_type": null,
+        "traits": ["agile"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 7,
+        "damage": "1d4+3",
+        "damage_type": "P",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Privateer Captain",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 3,
+    "is_template": true,
+    "level": 11,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 20,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 21,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 23,
+        "note": null
+      },
+      {
+        "name": "Sailing Lore",
+        "proficiency": 19,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 22,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 3,
+    "constitution": 3,
+    "wisdom": 5,
+    "armor_class": 30,
+    "hit_points": 175,
+    "speed": 25,
+    "fortitude_save": 19,
+    "reflex_save": 20,
+    "will_save": 23,
+    "perception": 21,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 21,
+        "damage": "2d6+5",
+        "damage_type": "P",
+        "traits": ["deadly 1d8", "magical", "disarm"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 21,
+        "damage": "1d8+5",
+        "damage_type": "P",
+        "traits": ["magical", "range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Prophet",
+    "race_id": 1,
+    "group": "Devotees",
+    "alignment_id": 6,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 8,
+        "note": "+10 to spout prophecy"
+      },
+      {
+        "name": "Religion",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 1,
+    "dexterity": 1,
+    "charisma": 4,
+    "constitution": 0,
+    "wisdom": 3,
+    "armor_class": 17,
+    "hit_points": 24,
+    "speed": 25,
+    "fortitude_save": 8,
+    "reflex_save": 7,
+    "will_save": 11,
+    "perception": 10,
+    "items": [
+      {
+        "name": "flail",
+        "proficiency": 8,
+        "damage": "1d6+2",
+        "damage_type": null,
+        "traits": ["disarm", "sweep", "trip"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 8,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "rock",
+        "proficiency": 7,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Rain-Scribe",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 2,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Arcana",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 12,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 1,
+    "dexterity": 3,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 21,
+    "hit_points": 54,
+    "speed": 40,
+    "fortitude_save": 9,
+    "reflex_save": 9,
+    "will_save": 12,
+    "perception": 13,
+    "items": [
+      {
+        "name": "scimitar",
+        "proficiency": 9,
+        "damage": "1d6+2",
+        "damage_type": "S",
+        "traits": ["forceful", "sweep"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 10,
+        "damage": "1d8+1",
+        "damage_type": "P",
+        "traits": [
+          "deadly d10",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Reckless Scientist",
+    "race_id": 1,
+    "group": "Villains",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Engineering Lore",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 13,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 5,
+    "dexterity": 4,
+    "charisma": 1,
+    "constitution": 5,
+    "wisdom": 2,
+    "armor_class": 23,
+    "hit_points": 92,
+    "speed": 25,
+    "fortitude_save": 17,
+    "reflex_save": 14,
+    "will_save": 10,
+    "perception": 10,
+    "items": [
+      {
+        "name": "sickle",
+        "proficiency": 17,
+        "damage": "1d4+7",
+        "damage_type": "S",
+        "traits": ["agile", "finesse", "magical", "trip"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "alchemical bomb",
+        "proficiency": 16,
+        "damage": ",",
+        "damage_type": null,
+        "traits": ["range increment 20 feet", "splash"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Ruffian",
+    "race_id": 1,
+    "group": "Criminals",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 6,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 1,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 18,
+    "hit_points": 32,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 8,
+    "will_save": 6,
+    "perception": 8,
+    "items": [
+      {
+        "name": "club",
+        "proficiency": 9,
+        "damage": "1d6+5",
+        "damage_type": "B",
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "sling",
+        "proficiency": 8,
+        "damage": "1d6+5",
+        "damage_type": null,
+        "traits": ["propulsive", "range increment 50 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      },
+      {
+        "name": "club",
+        "proficiency": 8,
+        "damage": "1d6+5",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Saboteur",
+    "race_id": 1,
+    "group": "Villains",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 6,
+        "note": "+8 to Craft snares"
+      },
+      {
+        "name": "Deception",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Engineering Lore",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Underworld Lore",
+        "proficiency": 6,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 2,
+    "dexterity": 3,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 18,
+    "hit_points": 27,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 9,
+    "will_save": 8,
+    "perception": 8,
+    "items": [
+      {
+        "name": "sap",
+        "proficiency": 7,
+        "damage": "1d6+3",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 9,
+        "damage": "1d6+2",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Sage",
+    "race_id": 1,
+    "group": "Scholars",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Arcana",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 14,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 4,
+    "dexterity": 2,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 22,
+    "hit_points": 86,
+    "speed": 25,
+    "fortitude_save": 10,
+    "reflex_save": 12,
+    "will_save": 16,
+    "perception": 14,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 12,
+        "damage": "1d4+5",
+        "damage_type": "B",
+        "traits": ["magical", "two-hand d8"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Servant",
+    "race_id": 1,
+    "group": "Laborers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Household Lore",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 2,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 1,
+    "armor_class": 15,
+    "hit_points": 9,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 7,
+    "will_save": 3,
+    "perception": 9,
+    "items": [
+      {
+        "name": "cutlery",
+        "proficiency": 5,
+        "damage": "1d4+1",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "cutlery",
+        "proficiency": 5,
+        "damage": "1d4+1",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 15 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Server",
+    "race_id": 1,
+    "group": "Publicans",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 5,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 2,
+    "constitution": 0,
+    "wisdom": 1,
+    "armor_class": 16,
+    "hit_points": 7,
+    "speed": 25,
+    "fortitude_save": 2,
+    "reflex_save": 7,
+    "will_save": 5,
+    "perception": 3,
+    "items": [
+      {
+        "name": "fist",
+        "proficiency": 6,
+        "damage": "1d4+1",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "pewter mug",
+        "proficiency": 6,
+        "damage": "1d4+1",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Ship Captain",
+    "race_id": 1,
+    "group": "Seafarers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Sailing Lore",
+        "proficiency": 17,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 10,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 2,
+    "charisma": 3,
+    "constitution": 0,
+    "wisdom": 2,
+    "armor_class": 23,
+    "hit_points": 90,
+    "speed": 25,
+    "fortitude_save": 12,
+    "reflex_save": 12,
+    "will_save": 14,
+    "perception": 12,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 17,
+        "damage": "1d6+10",
+        "damage_type": null,
+        "traits": ["deadly 1d8", "disarm", "magical"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "main-gauche",
+        "proficiency": 16,
+        "damage": "1d4+10",
+        "damage_type": "P",
+        "traits": ["agile", "disarm", "parry", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 14,
+        "damage": "1d6+6",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Smith",
+    "race_id": 1,
+    "group": "Tradespeople",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Crafting",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Smithy Lore",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 8,
+        "note": null
+      }
+    ],
+    "strength": 3,
+    "intelligence": 3,
+    "dexterity": 1,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 0,
+    "armor_class": 17,
+    "hit_points": 50,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 8,
+    "will_save": 5,
+    "perception": 5,
+    "items": [
+      {
+        "name": "light hammer",
+        "proficiency": 10,
+        "damage": "1d6+3",
+        "damage_type": "B",
+        "traits": ["agile"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "light hammer",
+        "proficiency": 8,
+        "damage": "1d6+3",
+        "damage_type": "B",
+        "traits": ["agile", "thrown 20 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Spy",
+    "race_id": 1,
+    "group": "Courtiers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Local Court Lore",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 12,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 2,
+    "dexterity": 4,
+    "charisma": 4,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 23,
+    "hit_points": 90,
+    "speed": 25,
+    "fortitude_save": 11,
+    "reflex_save": 17,
+    "will_save": 14,
+    "perception": 17,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 16,
+        "damage": "1d6+7",
+        "damage_type": null,
+        "traits": ["deadly 1d8", "disarm", "finesse", "magical"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 14,
+        "damage": "1d4+6",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Surgeon",
+    "race_id": 1,
+    "group": "Healers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 2,
+    "skills": [
+      {
+        "name": "Crafting",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 16,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 2,
+    "dexterity": 3,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 4,
+    "armor_class": 17,
+    "hit_points": 30,
+    "speed": 25,
+    "fortitude_save": 7,
+    "reflex_save": 7,
+    "will_save": 10,
+    "perception": 14,
+    "items": [
+      {
+        "name": "scalpel",
+        "proficiency": 11,
+        "damage": "1d4+1",
+        "damage_type": "S",
+        "traits": ["agile", "versatile P"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "scalpel",
+        "proficiency": 11,
+        "damage": "1d4+1",
+        "damage_type": "S",
+        "traits": ["agile", "thrown 10 feet", "versatile P"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Tax Collector",
+    "race_id": 1,
+    "group": "Magistrates",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Deception",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Mercantile Lore",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 6,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 1,
+    "charisma": 3,
+    "constitution": 0,
+    "wisdom": 2,
+    "armor_class": 14,
+    "hit_points": 8,
+    "speed": 25,
+    "fortitude_save": 2,
+    "reflex_save": 3,
+    "will_save": 9,
+    "perception": 6,
+    "items": [
+      {
+        "name": "dagger",
+        "proficiency": 5,
+        "damage": "1d4",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 5,
+        "damage": "1d8",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Teacher",
+    "race_id": 1,
+    "group": "Scholars",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Academia Lore",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "one additional Lore",
+        "proficiency": 14,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 4,
+    "dexterity": 0,
+    "charisma": 3,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 12,
+    "hit_points": 5,
+    "speed": 25,
+    "fortitude_save": 1,
+    "reflex_save": 2,
+    "will_save": 6,
+    "perception": 4,
+    "items": [
+      {
+        "name": "cane",
+        "proficiency": 4,
+        "damage": "1d4",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      }
+    ]
+  },
+  {
+    "name": "Tempest-Sun Mage",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 2,
+    "is_template": true,
+    "level": 11,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 18,
+        "note": null
+      },
+      {
+        "name": "Arcana",
+        "proficiency": 23,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 16,
+        "note": null
+      },
+      {
+        "name": "Magaambya Lore",
+        "proficiency": 23,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 19,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 21,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 21,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 5,
+    "dexterity": 4,
+    "charisma": 1,
+    "constitution": 3,
+    "wisdom": 3,
+    "armor_class": 28,
+    "hit_points": 145,
+    "speed": 30,
+    "fortitude_save": 19,
+    "reflex_save": 20,
+    "will_save": 21,
+    "perception": 18,
+    "items": [
+      {
+        "name": "staff of abjuration",
+        "proficiency": 16,
+        "damage": "1d4+2",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 20,
+        "damage": "1d8+2",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Tomb Raider",
+    "race_id": 1,
+    "group": "Explorers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 5,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Architecture Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 13,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Engineering Lore",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 13,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 2,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 1,
+    "wisdom": 2,
+    "armor_class": 21,
+    "hit_points": 75,
+    "speed": 25,
+    "fortitude_save": 10,
+    "reflex_save": 15,
+    "will_save": 11,
+    "perception": 13,
+    "items": [
+      {
+        "name": "kukri",
+        "proficiency": 15,
+        "damage": "1d6+7",
+        "damage_type": "S",
+        "traits": ["agile", "magical", "trip"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 15,
+        "damage": "1d6+3",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Torchbearer",
+    "race_id": 1,
+    "group": "Explorers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 0,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Architecture Lore",
+        "proficiency": 2,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 3,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 3,
+    "charisma": 1,
+    "constitution": 1,
+    "wisdom": 1,
+    "armor_class": 15,
+    "hit_points": 15,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 7,
+    "will_save": 5,
+    "perception": 5,
+    "items": [
+      {
+        "name": "torch",
+        "proficiency": 7,
+        "damage": "1d6+2",
+        "damage_type": "B",
+        "traits": [],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 5,
+        "damage": "1d4+2",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "hand crossbow",
+        "proficiency": 5,
+        "damage": "1d6",
+        "damage_type": "P",
+        "traits": ["range increment 60 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Tracker",
+    "race_id": 1,
+    "group": "Foresters",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Forest Lore",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 13,
+        "note": null
+      }
+    ],
+    "strength": 2,
+    "intelligence": 0,
+    "dexterity": 4,
+    "charisma": 0,
+    "constitution": 2,
+    "wisdom": 4,
+    "armor_class": 20,
+    "hit_points": 45,
+    "speed": 25,
+    "fortitude_save": 9,
+    "reflex_save": 11,
+    "will_save": 9,
+    "perception": 13,
+    "items": [
+      {
+        "name": "staff",
+        "proficiency": 9,
+        "damage": "1d4+4",
+        "damage_type": "B",
+        "traits": ["two-hand d8"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 11,
+        "damage": "1d8+3",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Troubadour",
+    "race_id": 1,
+    "group": "Performers",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Occultism",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Performance",
+        "proficiency": 13,
+        "note": "+14 when playing the lute"
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Theater Lore",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 0,
+    "intelligence": 2,
+    "dexterity": 3,
+    "charisma": 4,
+    "constitution": 0,
+    "wisdom": 1,
+    "armor_class": 19,
+    "hit_points": 38,
+    "speed": 25,
+    "fortitude_save": 5,
+    "reflex_save": 10,
+    "will_save": 8,
+    "perception": 8,
+    "items": [
+      {
+        "name": "rapier",
+        "proficiency": 12,
+        "damage": "1d6+3",
+        "damage_type": "P",
+        "traits": ["deadly 1d8", "disarm", "finesse"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 12,
+        "damage": "1d8+3",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Urchin",
+    "race_id": 1,
+    "group": "Downtrodden",
+    "alignment_id": 5,
+    "is_template": true,
+    "level": -1,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 4,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 5,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 3,
+        "note": null
+      },
+      {
+        "name": "Thievery",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 1,
+    "intelligence": 1,
+    "dexterity": 3,
+    "charisma": 2,
+    "constitution": 0,
+    "wisdom": 1,
+    "armor_class": 15,
+    "hit_points": 8,
+    "speed": 25,
+    "fortitude_save": 2,
+    "reflex_save": 7,
+    "will_save": 3,
+    "perception": 3,
+    "items": [
+      {
+        "name": "shiv",
+        "proficiency": 5,
+        "damage": "1d4-1",
+        "damage_type": null,
+        "traits": ["agile"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "fist",
+        "proficiency": 5,
+        "damage": "1d4-1",
+        "damage_type": "B",
+        "traits": ["agile", "nonlethal"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "rock",
+        "proficiency": 5,
+        "damage": "1d4-1",
+        "damage_type": "B",
+        "traits": ["thrown 10 feet"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Veteran Reclaimer",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 3,
+    "is_template": true,
+    "level": 11,
+    "skills": [
+      {
+        "name": "Acrobatics",
+        "proficiency": 20,
+        "note": null
+      },
+      {
+        "name": "Athletics",
+        "proficiency": 19,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 15,
+        "note": null
+      },
+      {
+        "name": "Medicine",
+        "proficiency": 19,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 18,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 20,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 22,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 5,
+    "charisma": 0,
+    "constitution": 4,
+    "wisdom": 3,
+    "armor_class": 29,
+    "hit_points": 195,
+    "speed": 25,
+    "fortitude_save": 20,
+    "reflex_save": 23,
+    "will_save": 19,
+    "perception": 24,
+    "items": [
+      {
+        "name": "bastard sword",
+        "proficiency": 21,
+        "damage": "2d8+8",
+        "damage_type": null,
+        "traits": ["magical", "two-hand d12"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 21,
+        "damage": "1d4+8",
+        "damage_type": "P",
+        "traits": ["agile", "versatile S"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 22,
+        "damage": "2d8+6",
+        "damage_type": null,
+        "traits": [
+          "deadly 1d10",
+          "magical",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      },
+      {
+        "name": "dagger",
+        "proficiency": 21,
+        "damage": "1d4+8",
+        "damage_type": "P",
+        "traits": ["agile", "thrown 10 feet", "versatile S"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Virtuous Defender",
+    "race_id": 1,
+    "group": "Other",
+    "alignment_id": 1,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Diplomacy",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Shining Crusade Lore",
+        "proficiency": 8,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 9,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 0,
+    "charisma": 3,
+    "constitution": 3,
+    "wisdom": 1,
+    "armor_class": 22,
+    "hit_points": 70,
+    "speed": 20,
+    "fortitude_save": 12,
+    "reflex_save": 6,
+    "will_save": 12,
+    "perception": 10,
+    "items": [
+      {
+        "name": "longsword",
+        "proficiency": 12,
+        "damage": "1d8+6",
+        "damage_type": "S",
+        "traits": ["versatile P"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 8,
+        "damage": "1d8+4",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Warden",
+    "race_id": 1,
+    "group": "Magistrates",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 6,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 14,
+        "note": null
+      },
+      {
+        "name": "Nature",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Stealth",
+        "proficiency": 12,
+        "note": null
+      },
+      {
+        "name": "Survival",
+        "proficiency": 12,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 1,
+    "dexterity": 2,
+    "charisma": 1,
+    "constitution": 3,
+    "wisdom": 2,
+    "armor_class": 25,
+    "hit_points": 96,
+    "speed": 25,
+    "fortitude_save": 12,
+    "reflex_save": 12,
+    "will_save": 12,
+    "perception": 12,
+    "items": [
+      {
+        "name": "bastard sword",
+        "proficiency": 16,
+        "damage": "1d8+7",
+        "damage_type": "S",
+        "traits": ["two-hand d12"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite longbow",
+        "proficiency": 17,
+        "damage": "1d8+5",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "magical",
+          "propulsive",
+          "range increment 100 feet",
+          "reload 0",
+          "volley 30 feet"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Watch Officer",
+    "race_id": 1,
+    "group": "Officers",
+    "alignment_id": 4,
+    "is_template": true,
+    "level": 3,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 11,
+        "note": null
+      },
+      {
+        "name": "Diplomacy",
+        "proficiency": 6,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Legal Lore",
+        "proficiency": 7,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 5,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 1,
+    "constitution": 3,
+    "wisdom": 1,
+    "armor_class": 20,
+    "hit_points": 45,
+    "speed": 25,
+    "fortitude_save": 10,
+    "reflex_save": 6,
+    "will_save": 8,
+    "perception": 8,
+    "items": [
+      {
+        "name": "warhammer",
+        "proficiency": 13,
+        "damage": "1d8+7",
+        "damage_type": "B",
+        "traits": ["shove"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "crossbow",
+        "proficiency": 10,
+        "damage": "1d8+3",
+        "damage_type": "P",
+        "traits": ["range increment 120 feet", "reload 1"],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  },
+  {
+    "name": "Zealot of Asmodeus",
+    "race_id": 1,
+    "group": "Devotees",
+    "alignment_id": 8,
+    "is_template": true,
+    "level": 4,
+    "skills": [
+      {
+        "name": "Athletics",
+        "proficiency": 9,
+        "note": null
+      },
+      {
+        "name": "Deception",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Intimidation",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Religion",
+        "proficiency": 10,
+        "note": null
+      },
+      {
+        "name": "Society",
+        "proficiency": 7,
+        "note": null
+      }
+    ],
+    "strength": 4,
+    "intelligence": 0,
+    "dexterity": 1,
+    "charisma": 2,
+    "constitution": 1,
+    "wisdom": 3,
+    "armor_class": 22,
+    "hit_points": 58,
+    "speed": 20,
+    "fortitude_save": 9,
+    "reflex_save": 7,
+    "will_save": 11,
+    "perception": 9,
+    "items": [
+      {
+        "name": "mace",
+        "proficiency": 12,
+        "damage": "1d8+4",
+        "damage_type": "B",
+        "traits": ["shove"],
+        "item_type": "Melee weapon"
+      },
+      {
+        "name": "composite shortbow",
+        "proficiency": 9,
+        "damage": "1d6+2",
+        "damage_type": "P",
+        "traits": [
+          "deadly 1d10",
+          "propulsive",
+          "range increment 60 feet",
+          "reload 0"
+        ],
+        "item_type": "Ranged weapon"
+      }
+    ]
+  }
+]

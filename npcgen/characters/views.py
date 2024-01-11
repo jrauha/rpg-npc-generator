@@ -1,8 +1,22 @@
+import json
+import os
+
 from flask import Blueprint
 
 from ..auth.decorators import login_required
+from ..extensions import db
+from .daos import CharacterDao, ItemDao, SkillDao
+from .services import CharacterTemplateService
 
 bp = Blueprint("characters", __name__)
+
+character_dao = CharacterDao(db.session)
+item_dao = ItemDao(db.session)
+skill_dao = SkillDao(db.session)
+
+character_template_service = CharacterTemplateService(
+    character_dao, item_dao, skill_dao
+)
 
 
 @bp.route("/")
@@ -31,5 +45,10 @@ def generate():
 
 @bp.cli.command("init-templates")
 def init_templates():
-    # TODO
-    pass
+    file_path = os.path.join("data", "character_templates.json")
+
+    with open(file_path, "r") as file:
+        characters_data = json.load(file)
+
+        for character_data in characters_data:
+            character_template_service.create_template(character_data)

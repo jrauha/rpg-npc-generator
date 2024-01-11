@@ -35,6 +35,7 @@ class UserDao:
         user = create_record(
             self.db_session,
             self.USER_TABLE,
+            returning="*",
             username=user.username,
             email=user.email,
             password=generate_password_hash(user.password),

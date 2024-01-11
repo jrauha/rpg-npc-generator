@@ -55,8 +55,16 @@ def test_create_record(session, temp_test_table):
 
     record = create_record(session, table_name, **kwargs)
 
-    assert isinstance(record.id, int)
-    assert record.id == 1
+    assert record is None
+
+
+def test_create_record_returning(session, temp_test_table):
+    table_name = temp_test_table
+    kwargs = {"id": 1, "column1": "value1", "column2": "value2"}
+
+    record = create_record(session, table_name, "id", **kwargs)
+
+    assert record[0] == kwargs["id"]
 
 
 def test_read_records(session, temp_test_table):

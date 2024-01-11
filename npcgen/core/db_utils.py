@@ -1,14 +1,14 @@
 from sqlalchemy import text
 
 
-def create_record(cur, table_name, **kwargs):
+def create_record(cur, table_name, returning=None, **kwargs):
     columns = ", ".join(kwargs.keys())
     values = ", ".join([":" + sub for sub in kwargs.keys()])
-    query = text(
-        f"INSERT INTO {table_name} ({columns}) VALUES ({values}) RETURNING *"
-    )
-    result = cur.execute(query, kwargs)
-    return result.fetchone()
+    query = f"INSERT INTO {table_name} ({columns}) VALUES ({values})"
+    if returning:
+        query += " RETURNING " + returning
+    result = cur.execute(text(query), kwargs)
+    return result.fetchone() if returning else None
 
 
 def read_records(cur, table_name):
