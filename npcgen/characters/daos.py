@@ -6,7 +6,14 @@ from ..core.db_utils import (
     read_record_by_attr,
     record_exists,
 )
-from .models import Character, CharacterItem, CharacterSkill, Item, Skill
+from .models import (
+    Character,
+    CharacterItem,
+    CharacterSkill,
+    Item,
+    Option,
+    Skill,
+)
 
 
 class CharacterDao:
@@ -144,6 +151,60 @@ class CharacterDao:
         )
         return [self._map_record_to_skill(record) for record in records]
 
+    def get_character_template_options(self):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            ch.id,
+            ch.name || ' (' || ch.level || ')' AS name
+            FROM character ch
+            WHERE ch.is_template = TRUE
+            ORDER BY ch.level, ch.name
+            """
+            )
+        )
+        return [self._map_record_to_option(record) for record in records]
+
+    def get_character_alignment_options(self):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            a.id,
+            a.name
+            FROM alignment a
+            """
+            )
+        )
+        return [self._map_record_to_option(record) for record in records]
+
+    def get_character_class_options(self):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            c.id,
+            c.name
+            FROM character_class c
+            """
+            )
+        )
+        return [self._map_record_to_option(record) for record in records]
+
+    def get_character_race_options(self):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            r.id,
+            r.name
+            FROM race r
+            """
+            )
+        )
+        return [self._map_record_to_option(record) for record in records]
+
     def _character_to_dict(self, character):
         return {
             "user_id": character.user_id,
@@ -229,6 +290,9 @@ class CharacterDao:
             ),
             proficiency=record.proficiency,
         )
+
+    def _map_record_to_option(self, record):
+        return Option(id=record.id, name=record.name)
 
 
 class ItemDao:

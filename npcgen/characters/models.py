@@ -142,3 +142,10 @@ class CharacterSkill(Skill):
             id=id,
         )
         self.proficiency = proficiency
+
+
+class Option:
+    def __init__(self, name, description=None, id=None):
+        self.id = id
+        self.name = name
+        self.description = description

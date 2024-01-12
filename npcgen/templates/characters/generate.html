@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="mt-6">
+        <form method="POST" id="character-form" action="{{ url_for('characters.generate') }}">
+          <h1 class="title">Generate an NPC</h1>
+          {{ form.hidden_tag() }}
+
+          <div class="field">
+            {{ form.template_id.label(class="label") }}
+            <div class="select is-fullwidth">
+              {{form.template_id }}
+            </div>
+          </div>
+
+          <div class="field">
+            {{ form.alignment_id.label(class="label") }}
+            <div class="select is-fullwidth">
+              {{form.alignment_id }}
+            </div>
+          </div>
+
+          <div class="field">
+            {{ form.class_id.label(class="label") }}
+            <div class="select is-fullwidth">
+              {{form.class_id }}
+            </div>
+          </div>
+
+          <div class="field">
+            {{ form.race_id.label(class="label") }}
+            <div class="select is-fullwidth">
+              {{form.race_id }}
+            </div>
+          </div>
+
+          <div class="field">
+            {{ form.hints.label(class="label") }}
+            {{ form.hints(class="textarea") }}
+          </div>
+
+          <div class="control mt-5">
+            <button class="button is-primary is-fullwidth is-medium" type="submit">
+              <span class="icon">
+                <i class="fas fa-wand-magic-sparkles"></i>
+              </span>
+              <span>Generate</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
