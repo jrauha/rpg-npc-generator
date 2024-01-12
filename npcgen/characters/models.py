@@ -1,3 +1,6 @@
+import random
+
+
 class Gender:
     MALE = "Male"
     FEMALE = "Female"
@@ -95,6 +98,31 @@ class Character:
         self.skills = skills
         self.items = items
 
+    def apply_random_modifiers(self):
+        self.strength += self._get_random_modifier()
+        self.dexterity += self._get_random_modifier()
+        self.constitution += self._get_random_modifier()
+        self.intelligence += self._get_random_modifier()
+        self.wisdom += self._get_random_modifier()
+        self.charisma += self._get_random_modifier()
+
+        self.perception += self._get_random_modifier(2)
+        self.armor_class += self._get_random_modifier(2)
+        self.hit_points += self._get_random_modifier(10)
+
+        self.fortitude_save += self._get_random_modifier(2)
+        self.reflex_save += self._get_random_modifier(2)
+        self.will_save += self._get_random_modifier(2)
+
+        for skill in self.skills:
+            skill.proficiency += self._get_random_modifier(2)
+
+        for item in self.items:
+            item.proficiency += self._get_random_modifier(2)
+
+    def _get_random_modifier(self, range=1):
+        return random.randint(-range, range)
+
 
 class Item:
     def __init__(
@@ -122,7 +150,7 @@ class CharacterItem(Item):
             damage=item.damage,
             damage_type=item.damage_type,
             traits=item.traits,
-            id=id,
+            id=item.id,
         )
         self.proficiency = proficiency
 
@@ -139,7 +167,7 @@ class CharacterSkill(Skill):
         super().__init__(
             name=skill.name,
             description=skill.description,
-            id=id,
+            id=skill.id,
         )
         self.proficiency = proficiency
 

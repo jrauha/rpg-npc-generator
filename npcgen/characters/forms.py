@@ -1,3 +1,5 @@
+import random
+
 from flask_wtf import FlaskForm
 from wtforms import SelectField, TextAreaField
 from wtforms.validators import Optional
@@ -22,3 +24,7 @@ class CharacterForm(FlaskForm):
         "Race",
         validators=[Optional()],
     )
+
+    def get_choice_or_random(self, field):
+        choices = field.choices[1:]  # Exclude the first element
+        return field.data or random.choice(choices)[0]

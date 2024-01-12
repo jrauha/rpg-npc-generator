@@ -1,56 +1,25 @@
-{% extends "layout.html" %} {% block content %}
-<div class="container is-max-desktop">
-  <div class="columns is-centered">
-    <div class="column is-half">
-      <div class="mt-6">
-        <form method="POST" id="character-form" action="{{ url_for('characters.generate') }}">
-          <h1 class="title">Generate an NPC</h1>
-          {{ form.hidden_tag() }}
-
-          <div class="field">
-            {{ form.template_id.label(class="label") }}
-            <div class="select is-fullwidth">
-              {{form.template_id }}
-            </div>
-          </div>
-
-          <div class="field">
-            {{ form.alignment_id.label(class="label") }}
-            <div class="select is-fullwidth">
-              {{form.alignment_id }}
-            </div>
-          </div>
-
-          <div class="field">
-            {{ form.class_id.label(class="label") }}
-            <div class="select is-fullwidth">
-              {{form.class_id }}
-            </div>
-          </div>
-
-          <div class="field">
-            {{ form.race_id.label(class="label") }}
-            <div class="select is-fullwidth">
-              {{form.race_id }}
-            </div>
-          </div>
-
-          <div class="field">
-            {{ form.hints.label(class="label") }}
-            {{ form.hints(class="textarea") }}
-          </div>
-
-          <div class="control mt-5">
-            <button class="button is-primary is-fullwidth is-medium" type="submit">
-              <span class="icon">
-                <i class="fas fa-wand-magic-sparkles"></i>
-              </span>
-              <span>Generate</span>
-            </button>
-          </div>
-        </form>
+{% extends "layout.html" %}
+{% block content %}
+<div class="container mt-6">
+  <div class="columns is-variable is-7">
+    <div class="column is-one-third">
+      <div class="box p-5">
+        {% include 'characters/partials/generate_form.html' %}
       </div>
     </div>
+    <div class="column is-two-thirds">
+      {% if character %}
+      {% include 'characters/partials/character_details.html' %}
+      {% else %}
+      <div class="p-6 is-flex is-align-items-center is-justify-content-center" style="height: 100%;">
+        <div class="is-flex is-align-items-center is-flex-direction-column is-justify-content-center mb-6">
+          <i class="fa-regular fa-eye fa-3x mb-4 has-text-dark-grey"></i>
+          <h1 class="title is-5 has-text-dark-grey">Your character will show up here</h1>
+        </div>
+      </div>
+      {% endif %}
+    </div>
   </div>
+</div>
 </div>
 {% endblock %}

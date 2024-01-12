@@ -1,5 +1,39 @@
+import copy
+
 from ..core.expections import ValidationError
 from .models import Character, Item, Skill
+
+
+class CharacterGeneratorService:
+    def __init__(self, character_dao):
+        self.character_dao = character_dao
+
+    def generate_character(self, options, user_id=None):
+        template = self.character_dao.get_character(
+            options.get("template_id"),
+            populate_items=True,
+            populate_skills=True,
+        )
+
+        if template is None:
+            raise ValidationError("template_id", "Template not found")
+
+        character = copy.deepcopy(template)
+        character.id = None
+        character.is_template = False
+
+        character.user_id = user_id
+        character.template_id = options.get("template_id")
+        character.alignment_id = options.get("alignment_id")
+        character.class_id = options.get("class_id")
+        character.race_id = options.get("race_id")
+        character.hints = options.get("hints")
+
+        character.apply_random_modifiers()
+
+        created_id = self.character_dao.create_character(character)
+
+        return created_id
 
 
 class CharacterTemplateService:
