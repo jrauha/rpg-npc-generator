@@ -39,8 +39,18 @@ def index():
 
 
 @bp.route("/characters")
+@login_required
 def characters():
-    return "TODO"
+    user_id = session["user_id"]
+    tab = request.args.get("tab")
+
+    return render_template(
+        "characters/index.html",
+        characters=character_dao.get_characters_by_user(
+            user_id, tab == "templates"
+        ),
+        tab=tab,
+    )
 
 
 @bp.route("/character/<int:character_id>")

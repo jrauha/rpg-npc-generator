@@ -60,6 +60,39 @@ class CharacterDao:
 
         return character
 
+    def get_characters_by_user(self, user_id, template=False):
+        records = self.session.execute(
+            text(
+                """
+            SELECT
+            ch.*,
+            a.id alignment_id,
+            a.name alignment_name,
+            cc.id class_id,
+            cc.name class_name,
+            r.id race_id,
+            r.name race_name,
+            t.id AS template_id,
+            t.name AS template_name
+            FROM character ch
+            LEFT JOIN character_class cc ON
+            cc.id = class_id
+            JOIN race r ON
+            r.id = race_id
+            JOIN alignment a ON
+            a.id = alignment_id
+            LEFT JOIN character t ON
+            t.id = ch.template_id
+            WHERE ch.is_template = :template
+            AND ch.user_id = :user_id
+            OR ch.user_id IS NULL
+            ORDER BY ch.created_at DESC
+            """
+            ),
+            {"user_id": user_id, "template": template},
+        )
+        return [self._map_record_to_character(record) for record in records]
+
     def create_character(self, character):
         character_dict = self._character_to_dict(character)
         character_id = create_record(
