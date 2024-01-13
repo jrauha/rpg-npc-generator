@@ -24,4 +24,4 @@ line_length = 79
 
 [tool.djlint]
 profile = "jinja"
-ignore = "H030,H031"
+ignore = "H030,H031,H023"

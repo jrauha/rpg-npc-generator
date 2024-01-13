@@ -103,3 +103,9 @@ def character_fixture(session, user_fixture):
     yield test_character
 
     character_dao.delete_character(id)
+
+
+@pytest.fixture
+def login_user(client, user_fixture):
+    with client.session_transaction() as sess:
+        sess["user_id"] = user_fixture.id

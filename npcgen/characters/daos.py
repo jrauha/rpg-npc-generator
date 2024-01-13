@@ -6,6 +6,7 @@ from ..core.db_utils import (
     read_record_by_attr,
     record_exists,
 )
+from ..core.pagination import PaginatedResponse, Pagination
 from .models import (
     Character,
     CharacterItem,
@@ -60,11 +61,16 @@ class CharacterDao:
 
         return character
 
-    def get_characters_by_user(self, user_id, template=False):
+    def get_characters_by_user(
+        self, user_id, template=False, page=1, page_size=20
+    ):
+        offset = (page - 1) * page_size
+
         records = self.session.execute(
             text(
                 """
             SELECT
+            count(*) OVER() AS total_count,
             ch.*,
             a.id alignment_id,
             a.name alignment_name,
@@ -87,11 +93,25 @@ class CharacterDao:
             AND ch.user_id = :user_id
             OR ch.user_id IS NULL
             ORDER BY ch.created_at DESC
+            LIMIT :page_size OFFSET :offset
             """
             ),
-            {"user_id": user_id, "template": template},
+            {
+                "user_id": user_id,
+                "template": template,
+                "page_size": page_size,
+                "offset": offset,
+            },
+        ).fetchall()
+
+        return PaginatedResponse(
+            data=[self._map_record_to_character(record) for record in records],
+            pagination=Pagination(
+                page,
+                page_size,
+                records[0].total_count // page_size + 1,
+            ),
         )
-        return [self._map_record_to_character(record) for record in records]
 
     def create_character(self, character):
         character_dict = self._character_to_dict(character)

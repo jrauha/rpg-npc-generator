@@ -52,14 +52,18 @@ def index():
 @login_required
 def characters():
     user_id = session["user_id"]
+    page = int(request.args.get("page") or 1)
     tab = request.args.get("tab")
+
+    res = character_dao.get_characters_by_user(
+        user_id, tab == "templates", page
+    )
 
     return render_template(
         "characters/index.html",
-        characters=character_dao.get_characters_by_user(
-            user_id, tab == "templates"
-        ),
         tab=tab,
+        data=res.data,
+        pagination=res.pagination,
     )
 
 
@@ -79,6 +83,7 @@ def character_details(character_id):
 @login_required
 def generate():
     form = _init_character_form()
+    user_id = session["user_id"]
 
     if form.validate_on_submit():
         character_id = character_generator_service.generate_character(
@@ -88,7 +93,7 @@ def generate():
                 "race_id": form.get_choice_or_random(form.race_id),
                 "class_id": form.get_choice_or_random(form.class_id),
             },
-            user_id=session["user_id"],
+            user_id=user_id,
         )
 
         return redirect(

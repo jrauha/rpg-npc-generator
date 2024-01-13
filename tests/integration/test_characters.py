@@ -12,3 +12,10 @@ def test_character_details_not_found(client):
 
     assert response.status_code == 404
     assert b"Character not found" in response.data
+
+
+def test_characters(client, character_fixture, login_user):
+    with client:
+        response = client.get("/characters")
+
+        assert response.status_code == 200
