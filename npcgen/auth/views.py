@@ -33,16 +33,16 @@ def login():
         return render_template("auth/login.html", form=form)
 
 
-@login_required
 @bp.route("/account")
+@login_required
 def account():
     user_id = session.get("user_id")
     user = user_dao.get_user_by_id(user_id)
     return render_template("auth/account.html", user=user)
 
 
-@login_required
 @bp.route("/logout")
+@login_required
 def logout():
     session.pop("user_id", None)
     return redirect(url_for("auth.login"))
