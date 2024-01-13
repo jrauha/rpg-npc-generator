@@ -33,6 +33,16 @@ def delta(num):
     return f"+{num}" if not num or num > 0 else num
 
 
+@bp.app_template_filter()
+def character_description(character):
+    class_name = character.class_name if character.class_name != "None" else ""
+    return (
+        f"Level {character.level} {character.race_name} {class_name}".strip()
+        + ", "
+        f"{character.alignment_name} alignment"
+    )
+
+
 @bp.route("/")
 def index():
     return redirect(url_for("characters.generate"))

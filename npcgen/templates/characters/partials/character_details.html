@@ -1,8 +1,6 @@
 <h1 class="title is-3 mt-3 mb-2">{{ character.name }}</h1>
 <p class="mb-4">
-    <span>Level {{ character.level }} {{ character.race_name }}
-        {% if character.class_name != "None" %}{{ character.class_name }}{% endif %}
-    , {{ character.alignment_name }} alignment</span>
+    <span>{{ character | character_description }}</span>
 </p>
 <hr class="my-3" />
 <div class="columns is-mobile m-0">

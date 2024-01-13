@@ -33,14 +33,7 @@
                             <td>
                                 <a href="{{ url_for('characters.character_details', character_id=character.id) }}">{{ character.name }}</a>
                             </td>
-                            <td>
-                                <span>Level {{ character.level }} {{ character.race_name }}
-                                    {% if character.class_name != "None" %}
-                                        {{
-                                        character.class_name }}
-                                    {% endif %}
-                                , {{ character.alignment_name }} alignment</span>
-                            </td>
+                            <td>{{ character | character_description }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
