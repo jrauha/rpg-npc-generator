@@ -1,35 +1,50 @@
-{% extends "layout.html" %} {% block content %}
-<div class="container">
-  <h1 class="title mt-6">Gallery</h1>
-  <div>
-    <nav class="level">
-      <div class="level-left">
-        {% if tab == 'templates' %}
-        <p class="level-item"><a href="{{ url_for('characters.characters') }}">My characters</a></p>
-        <p class="level-item"><strong>Templates</strong></p>
-        {% else %}
-        <p class="level-item"><strong>My characters</strong></p>
-        <p class="level-item"><a href="{{ url_for('characters.characters', tab='templates') }}">Templates</a></p>
-        {% endif %}
-      </div>
-    </nav>
-    <table class="table characters-table is-fullwidth is-hoverable">
-      <thead>
-        <th>Name</th>
-        <th>Description</th>
-      </thead>
-      <tbody>
-        {% for character in characters %}
-        <tr>
-          <td>
-            <a href="{{ url_for('characters.character_details', character_id=character.id) }}">{{ character.name }}</a>
-          </td>
-          <td><span>Level {{ character.level }} {{ character.race_name }}{% if character.class_name != "None" %} {{
-              character.class_name }}{% endif %}, {{ character.alignment_name }} alignment</span></td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-</div>
-{% endblock %}
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h1 class="title mt-6">Gallery</h1>
+        <div>
+            <nav class="level">
+                <div class="level-left">
+                    {% if tab == 'templates' %}
+                        <p class="level-item">
+                            <a href="{{ url_for("characters.characters") }}">My characters</a>
+                        </p>
+                        <p class="level-item">
+                            <strong>Templates</strong>
+                        </p>
+                    {% else %}
+                        <p class="level-item">
+                            <strong>My characters</strong>
+                        </p>
+                        <p class="level-item">
+                            <a href="{{ url_for('characters.characters', tab='templates') }}">Templates</a>
+                        </p>
+                    {% endif %}
+                </div>
+            </nav>
+            <table class="table characters-table is-fullwidth is-hoverable">
+                <thead>
+                    <th>Name</th>
+                    <th>Description</th>
+                </thead>
+                <tbody>
+                    {% for character in data %}
+                        <tr>
+                            <td>
+                                <a href="{{ url_for('characters.character_details', character_id=character.id) }}">{{ character.name }}</a>
+                            </td>
+                            <td>
+                                <span>Level {{ character.level }} {{ character.race_name }}
+                                    {% if character.class_name != "None" %}
+                                        {{
+                                        character.class_name }}
+                                    {% endif %}
+                                , {{ character.alignment_name }} alignment</span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}

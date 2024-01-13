@@ -1,56 +1,65 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-
-<body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <b>RPG NPC Generator</b>
-      </a>
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="main-navbar" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="{{ url_for('characters.characters') }}">Gallery</a>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            {% if session.user_id %}
-            <a class="button is-light" href="{{ url_for('auth.account') }}">
-              <span class="icon">
-                <i class="fas fa-user"></i>
-              </span>
-              <span>Account</span>
-            </a>
-            <a class="button is-primary" href="{{ url_for('characters.generate') }}">
-              <span class="icon">
-                <i class="fas fa-wand-magic-sparkles"></i>
-              </span>
-              <span>Generate</span></a>
-            {% else %}
-            <a class="button is-primary" href="{{ url_for('auth.login') }}">Log in</a>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main>{% block content %}{% endblock %}</main>
-  {% block scripts %}{% endblock %}
-</body>
-
+<html lang="en">
+    <head>
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="stylesheet"
+              href="{{ url_for('static', filename='css/styles.css') }}" />
+    </head>
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="{{ url_for("characters.generate") }}">
+                    <b>RPG NPC Generator</b>
+                </a>
+                <a role="button"
+                   class="navbar-burger"
+                   aria-label="menu"
+                   aria-expanded="false"
+                   data-target="main-navbar">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="main-navbar" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{{ url_for("characters.characters") }}">Gallery</a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            {% if session.user_id %}
+                                <a class="button is-light" href="{{ url_for("auth.account") }}">
+                                    <span class="icon">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <span>Account</span>
+                                </a>
+                                <a class="button is-primary" href="{{ url_for("characters.generate") }}">
+                                    <span class="icon">
+                                        <i class="fas fa-wand-magic-sparkles"></i>
+                                    </span>
+                                    <span>Generate</span></a>
+                            {% else %}
+                                <a class="button is-primary" href="{{ url_for("auth.login") }}">Log in</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+        {% block scripts %}
+        {% endblock scripts %}
+    </body>
 </html>

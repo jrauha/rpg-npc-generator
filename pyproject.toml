@@ -21,3 +21,7 @@ line-length = 79
 [tool.isort]
 profile = "black"
 line_length = 79
+
+[tool.djlint]
+profile = "jinja"
+ignore = "H030,H031"

@@ -1,26 +1,19 @@
-{% extends 'layout.html' %} {% block content %}
-<div class="container">
-  <div class="columns is-centered mt-6">
-    <div class="column is-one-third">
-      <h1 class="title">Login</h1>
-      {% if error %}
-      <div class="notification is-danger">{{ error }}</div>
-      {% endif %}
-      <form action="{{ url_for('auth.login') }}" method="POST">
-        {{ form.hidden_tag() }}
-        <div class="field">
-          {{ form.username.label(class="label") }} {{
-          form.username(class="input") }}
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="columns is-centered mt-6">
+            <div class="column is-one-third">
+                <h1 class="title">Login</h1>
+                {% if error %}<div class="notification is-danger">{{ error }}</div>{% endif %}
+                <form action="{{ url_for("auth.login") }}" method="post">
+                    {{ form.hidden_tag() }}
+                    <div class="field">{{ form.username.label(class="label") }} {{ form.username(class="input") }}</div>
+                    <div class="field">{{ form.password.label(class="label") }} {{ form.password(class="input", type="password") }}</div>
+                    <div class="control">
+                        <input class="button is-primary" type="submit" value="Submit" />
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="field">
-          {{ form.password.label(class="label") }} {{
-          form.password(class="input", type="password") }}
-        </div>
-        <div class="control">
-          <input class="button is-primary" type="submit" value="Submit" />
-        </div>
-      </form>
     </div>
-  </div>
-</div>
-{% endblock %}
+{% endblock content %}

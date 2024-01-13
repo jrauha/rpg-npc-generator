@@ -1,11 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container mt-6 is-max-desktop">
-  <div class="columns is-centered">
-    <div class="column is-two-thirds">
-      {% include 'characters/partials/character_details.html' %}
+    <div class="container mt-6 is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column is-two-thirds">{% include "characters/partials/character_details.html" %}</div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-{% endblock %}
+{% endblock content %}

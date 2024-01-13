@@ -55,6 +55,16 @@ function lint {
   cmd flake8 "${@}"
 }
 
+function lint:templates {
+  # Lint Jinja2 templates
+  cmd djlint . "${@}"
+}
+
+function format:templates {
+  # Format Jinja2 templates
+  cmd djlint . --reformat "${@}"
+}
+
 function format:imports {
   # Sort Python imports
   cmd isort . "${@}"
@@ -70,6 +80,8 @@ function quality {
   format:imports
   format
   lint
+  lint:templates
+  format:templates
 }
 
 function test:unit {
@@ -139,8 +151,10 @@ function ci:test {
   docker compose logs
 
   lint "${@}"
-  format:imports --check
+  lint:templates
+  lint:templates --check
   format --check
+  format:imports --check
   flask db reset --with-testdb
   test "${@}"
 }

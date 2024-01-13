@@ -17,5 +17,6 @@ pytest-cov==4.1.0
 flake8==6.1.0
 isort==5.12.0
 black==23.11.0
+djlint==1.34.1
 
 Flask-DB==0.4.0
