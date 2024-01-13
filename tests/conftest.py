@@ -1,5 +1,6 @@
 import pytest
 
+import npcgen.characters.ai_tools
 from npcgen import create_app
 from npcgen.auth.models import User
 from npcgen.characters.models import Character, Gender
@@ -110,3 +111,23 @@ def login_user(client, user_fixture):
     with client.session_transaction() as sess:
         sess["user_id"] = user_fixture.id
     return user_fixture
+
+
+# Patch ai_tools module so that we don't hit the ChatGPT API during tests
+@pytest.fixture(autouse=True)
+def mock_ai_tools(monkeypatch):
+    monkeypatch.setattr(
+        npcgen.characters.ai_tools,
+        "generate_backstory",
+        lambda *args, **kwargs: "Backstory",
+    )
+    monkeypatch.setattr(
+        npcgen.characters.ai_tools,
+        "generate_plot_hook",
+        lambda *args, **kwargs: "Plot hook",
+    )
+    monkeypatch.setattr(
+        npcgen.characters.ai_tools,
+        "generate_name",
+        lambda *args, **kwargs: "John Doe",
+    )
