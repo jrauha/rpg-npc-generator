@@ -48,15 +48,17 @@
 <p>
     <span class="has-text-weight-semibold">Hit points:</span> {{ character.hit_points }}
 </p>
-<p>
+<p class="is-flex is-flex-wrap-wrap">
     <span class="has-text-weight-semibold">Saving throws:</span>
-    <i>Fortitude save</i> {{ character.fortitude_save | delta }}
-    <i>Reflex save</i> {{ character.reflex_save | delta }}
-    <i>Will save</i> {{ character.will_save | delta }}
+    <span class="ml-2"><i>Fortitude save</i> {{ character.fortitude_save | delta }}</span>
+    <span class="ml-2"><i>Reflex save</i> {{ character.reflex_save | delta }}</span>
+    <span class="ml-2"><i>Will save</i> {{ character.will_save | delta }}</span>
 </p>
-<p>
+<p class="is-flex is-flex-wrap-wrap ">
     <span class="has-text-weight-semibold">Skills:</span>
-    {% for skill in character.skills %}<span>{{ skill.name }} {{ skill.proficiency | delta }}</span>{% endfor %}
+    {% for skill in character.skills %}
+        <span class="ml-2">{{ skill.name }} {{ skill.proficiency | delta }}</span>
+    {% endfor %}
 </p>
 <p>
     <hr class="my-3" />
@@ -79,5 +81,5 @@
 </p>
 <p>
     <h3 class="title is-5 mt-3 mb-3">Plot hooks</h3>
-    <div class="whitespace-pre-wrap">{{ character.plot_hook }}</div>
+    <div class="whitespace-pre-wrap mb-6">{{ character.plot_hook }}</div>
 </p>
