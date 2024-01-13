@@ -109,3 +109,4 @@ def character_fixture(session, user_fixture):
 def login_user(client, user_fixture):
     with client.session_transaction() as sess:
         sess["user_id"] = user_fixture.id
+    return user_fixture

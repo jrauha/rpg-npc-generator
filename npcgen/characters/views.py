@@ -87,12 +87,11 @@ def generate():
 
     if form.validate_on_submit():
         character_id = character_generator_service.generate_character(
-            {
-                "template_id": form.get_choice_or_random(form.template_id),
-                "alignment_id": form.get_choice_or_random(form.alignment_id),
-                "race_id": form.get_choice_or_random(form.race_id),
-                "class_id": form.get_choice_or_random(form.class_id),
-            },
+            form.get_choice_or_random(form.template_id),
+            form.get_choice_or_random(form.alignment_id),
+            form.get_choice_or_random(form.class_id),
+            form.get_choice_or_random(form.race_id),
+            form.hints.data,
             user_id=user_id,
         )
 

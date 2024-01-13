@@ -219,6 +219,66 @@ class CharacterDao:
         )
         return [self._map_record_to_option(record) for record in records]
 
+    def get_template_name(self, template_id):
+        record = self.session.execute(
+            text(
+                """
+            SELECT
+            ch.name
+            FROM character ch
+            WHERE ch.is_template = TRUE
+            AND ch.id = :template_id
+            """
+            ),
+            {"template_id": template_id},
+        ).fetchone()
+        return record.name if record else None
+
+    def get_alignment_name(self, alignment_id):
+        record = self.session.execute(
+            text(
+                """
+            SELECT
+            a.name
+            FROM alignment a
+            WHERE a.id = :alignment_id
+            """
+            ),
+            {"alignment_id": alignment_id},
+        ).fetchone()
+
+        return record.name if record else None
+
+    def get_character_class_name(self, class_id):
+        record = self.session.execute(
+            text(
+                """
+            SELECT
+            c.name
+            FROM character_class c
+            WHERE c.id = :class_id
+            """
+            ),
+            {"class_id": class_id},
+        ).fetchone()
+
+        return record.name if record else None
+
+    def get_race_name(self, race_id):
+        record = self.session.execute(
+            text(
+                """
+            SELECT
+            r.name
+            FROM race r
+            WHERE r.id = :race_id
+            """
+            ),
+            {"race_id": race_id},
+        ).fetchone()
+
+        return record.name if record else None
+
     def get_character_alignment_options(self):
         records = self.session.execute(
             text(

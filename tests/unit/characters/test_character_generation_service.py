@@ -38,7 +38,7 @@ def test_generate_character_success(
     character_dao.get_character.return_value = template_character
     character_dao.create_character.return_value = 2
 
-    created_id = character_generator_service.generate_character(options)
+    created_id = character_generator_service.generate_character(**options)
 
     assert created_id == 2
 
@@ -51,7 +51,7 @@ def test_generate_character_template_not_found(
     character_dao.get_character.return_value = None
 
     with pytest.raises(ValidationError):
-        character_generator_service.generate_character(options)
+        character_generator_service.generate_character(**options)
 
     character_dao.get_character.assert_called_once_with(
         options["template_id"],
@@ -59,3 +59,11 @@ def test_generate_character_template_not_found(
         populate_skills=True,
     )
     character_dao.create_character.assert_not_called()
+
+
+def test_generate_character_skip_ai(character_generator_service, options):
+    character_generator_service._generate_ai_props = MagicMock()
+
+    character_generator_service.generate_character(skip_ai=True, **options)
+
+    character_generator_service._generate_ai_props.assert_not_called()

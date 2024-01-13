@@ -19,3 +19,18 @@ def test_characters(client, character_fixture, login_user):
         response = client.get("/characters")
 
         assert response.status_code == 200
+
+
+def test_unauthorized_access(client):
+    response = client.get("/characters")
+
+    assert response.status_code == 302
+    assert "/login" in response.headers["Location"]
+
+
+def test_generate(client, login_user):
+    with client:
+        response = client.get("/generate")
+
+        assert response.status_code == 200
+        assert b"Generate an NPC" in response.data

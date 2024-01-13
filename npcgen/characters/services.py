@@ -1,6 +1,7 @@
 import copy
 
 from ..core.expections import ValidationError
+from . import ai_tools
 from .models import Character, Item, Skill
 
 
@@ -8,9 +9,18 @@ class CharacterGeneratorService:
     def __init__(self, character_dao):
         self.character_dao = character_dao
 
-    def generate_character(self, options, user_id=None):
+    def generate_character(
+        self,
+        template_id,
+        alignment_id,
+        class_id,
+        race_id,
+        hints,
+        user_id=None,
+        skip_ai=False,
+    ):
         template = self.character_dao.get_character(
-            options.get("template_id"),
+            template_id,
             populate_items=True,
             populate_skills=True,
         )
@@ -23,17 +33,52 @@ class CharacterGeneratorService:
         character.is_template = False
 
         character.user_id = user_id
-        character.template_id = options.get("template_id")
-        character.alignment_id = options.get("alignment_id")
-        character.class_id = options.get("class_id")
-        character.race_id = options.get("race_id")
-        character.hints = options.get("hints")
+        character.template_id = template_id
+        character.alignment_id = alignment_id
+        character.class_id = class_id
+        character.race_id = race_id
+        character.hints = hints
 
         character.apply_random_modifiers()
 
-        created_id = self.character_dao.create_character(character)
+        if not skip_ai:
+            self._generate_ai_props(
+                character, class_id, race_id, alignment_id, template_id, hints
+            )
 
-        return created_id
+        return self.character_dao.create_character(character)
+
+    def _generate_ai_props(
+        self, character, class_id, race_id, alignment_id, template_id, hints
+    ):
+        class_name = self.character_dao.get_character_class_name(class_id)
+        race_name = self.character_dao.get_race_name(race_id)
+        alignment_name = self.character_dao.get_alignment_name(alignment_id)
+        template_name = self.character_dao.get_template_name(template_id)
+
+        character.name = ai_tools.generate_name(
+            race_name,
+            class_name,
+            alignment_name,
+            template_name,
+            hints,
+        )
+        character.backstory = ai_tools.generate_backstory(
+            character.name,
+            race_name,
+            class_name,
+            alignment_name,
+            template_name,
+            hints,
+        )
+        character.plot_hook = ai_tools.generate_plot_hook(
+            character.name,
+            race_name,
+            class_name,
+            alignment_name,
+            template_name,
+            hints,
+        )
 
 
 class CharacterTemplateService:
