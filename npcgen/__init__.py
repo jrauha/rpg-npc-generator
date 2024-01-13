@@ -1,3 +1,4 @@
+import openai
 from flask import Flask
 
 from .auth import views as auth_views
@@ -9,6 +10,7 @@ def create_app():
     app = Flask(__name__)
 
     app.config.from_object("config.settings")
+    openai.api_key = app.config.get("OPENAI_API_KEY")
 
     db.init_app(app)
 

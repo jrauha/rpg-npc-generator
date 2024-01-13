@@ -23,3 +23,4 @@ SECRET_KEY = environ.get("SECRET_KEY")
 SQLALCHEMY_DATABASE_URI = build_database_uri()
 STATIC_FOLDER = "static"
 TEMPLATES_FOLDER = "templates"
+OPENAI_API_KEY = environ.get("OPENAI_API_KEY")
