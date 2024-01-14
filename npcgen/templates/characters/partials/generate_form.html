@@ -1,25 +1,14 @@
+{% from "macros.html" import render_field %}
 <form method="post"
       id="character-form"
       action="{{ url_for("characters.generate") }}">
     <h1 class="title is-4">Generate an NPC</h1>
     {{ form.hidden_tag() }}
-    <div class="field">
-        {{ form.template_id.label(class="label") }}
-        <div class="select is-fullwidth">{{ form.template_id }}</div>
-    </div>
-    <div class="field">
-        {{ form.alignment_id.label(class="label") }}
-        <div class="select is-fullwidth">{{ form.alignment_id }}</div>
-    </div>
-    <div class="field">
-        {{ form.class_id.label(class="label") }}
-        <div class="select is-fullwidth">{{ form.class_id }}</div>
-    </div>
-    <div class="field">
-        {{ form.race_id.label(class="label") }}
-        <div class="select is-fullwidth">{{ form.race_id }}</div>
-    </div>
-    <div class="field">{{ form.hints.label(class="label") }} {{ form.hints(class="textarea") }}</div>
+    {{ render_field(form.template_id) }}
+    {{ render_field(form.alignment_id) }}
+    {{ render_field(form.class_id) }}
+    {{ render_field(form.race_id) }}
+    {{ render_field(form.hints, class="textarea") }}
     <div class="control mt-5">
         <button class="button is-primary is-fullwidth is-medium" type="submit">
             <span class="icon">

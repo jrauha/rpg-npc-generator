@@ -1,16 +1,17 @@
+{% from "macros.html" import render_field %}
 {% extends "layout.html" %}
 {% block content %}
     <div class="container">
         <div class="columns is-centered mt-6">
-            <div class="column is-one-third">
+            <div class="column is-one-quarter">
                 <h1 class="title">Login</h1>
                 {% if error %}<div class="notification is-danger">{{ error }}</div>{% endif %}
                 <form action="{{ url_for("auth.login") }}" method="post">
                     {{ form.hidden_tag() }}
-                    <div class="field">{{ form.username.label(class="label") }} {{ form.username(class="input") }}</div>
-                    <div class="field">{{ form.password.label(class="label") }} {{ form.password(class="input", type="password") }}</div>
-                    <div class="control">
-                        <input class="button is-primary" type="submit" value="Submit" />
+                    {{ render_field(form.username) }}
+                    {{ render_field(form.password, type="password") }}
+                    <div class="control mt-5">
+                        <input class="button is-primary is-fullwidth" type="submit" value="Submit" />
                     </div>
                 </form>
             </div>
