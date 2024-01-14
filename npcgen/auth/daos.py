@@ -5,6 +5,7 @@ from ..core.db_utils import (
     delete_record,
     read_record_by_attr,
     read_record_by_id,
+    update_record,
 )
 from .models import User
 
@@ -44,6 +45,15 @@ class UserDao:
 
         self.db_session.commit()
         return self._map_record_to_user(user)
+
+    def update_password(self, user_id, password):
+        update_record(
+            self.db_session,
+            self.USER_TABLE,
+            user_id,
+            password=generate_password_hash(password),
+        )
+        self.db_session.commit()
 
     def delete_user(self, user_id):
         delete_record(self.db_session, self.USER_TABLE, user_id)

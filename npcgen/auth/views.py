@@ -4,7 +4,7 @@ from flask import Blueprint, redirect, render_template, session, url_for
 from ..extensions import db
 from .daos import UserDao
 from .decorators import login_required
-from .forms import LoginForm
+from .forms import ChangePasswordForm, LoginForm
 from .models import User
 from .services import AuthService
 
@@ -29,8 +29,30 @@ def login():
             )
         session["user_id"] = user.id
         return redirect(url_for("auth.account"))
-    else:
-        return render_template("auth/login.html", form=form)
+
+    return render_template("auth/login.html", form=form)
+
+
+@bp.route("/change-password", methods=["GET", "POST"])
+@login_required
+def change_password():
+    form = ChangePasswordForm()
+    if form.validate_on_submit():
+        user_id = session.get("user_id")
+        user = user_dao.get_user_by_id(user_id)
+        old_password = form.old_password.data
+        new_password = form.new_password.data
+        if auth_service.authenticate(user.username, old_password):
+            user_dao.update_password(user.id, new_password)
+            return redirect(url_for("auth.account"))
+
+        return render_template(
+            "auth/change_password.html",
+            form=form,
+            error="Invalid old password",
+        )
+
+    return render_template("auth/change_password.html", form=form)
 
 
 @bp.route("/account")

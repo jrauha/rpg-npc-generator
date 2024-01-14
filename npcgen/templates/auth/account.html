@@ -8,6 +8,9 @@
                 <p>Email: {{ user.email }}</p>
                 <ul class="list mt-3">
                     <li>
+                        <a href="{{ url_for("auth.change_password") }}">Change password</a>
+                    </li>
+                    <li>
                         <a href="{{ url_for("auth.logout") }}">Log out</a>
                     </li>
                 </ul>
