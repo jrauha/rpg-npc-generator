@@ -57,7 +57,19 @@
                 </div>
             </div>
         </nav>
-        <main class="main-content mb-6 p-4">
+        <div class="container mt-5">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="notification is-{{ category }}">
+                            <button class="delete"></button>
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <main class="main-content mb-6 mt-6 p-4">
             {% block content %}
             {% endblock content %}
         </main>
