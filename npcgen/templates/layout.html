@@ -5,6 +5,9 @@
             {% block title %}
             {% endblock title %}
         </title>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1" />
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
         <link rel="stylesheet"
@@ -55,7 +58,7 @@
                 </div>
             </div>
         </nav>
-        <main>
+        <main class="main-content mb-6 p-4">
             {% block content %}
             {% endblock content %}
         </main>
