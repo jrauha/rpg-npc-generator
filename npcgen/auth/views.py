@@ -83,3 +83,13 @@ def create(username, email, password, superuser):
         username=username, email=email, password=password, superuser=superuser
     )
     auth_service.register_user(user)
+
+
+@bp.cli.command("delete-user")
+@click.option("--username", prompt="Username")
+def remove(username):
+    user = user_dao.get_user_by_username(username)
+    if not user:
+        raise click.BadParameter(f"User {username} does not exist")
+    if click.confirm(f"Are you sure you want to delete {username}?"):
+        user_dao.soft_delete_user(user.id)
