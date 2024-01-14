@@ -122,12 +122,31 @@ def generate():
             user_id=user_id,
         )
 
+        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+            return (
+                "",
+                201,
+                {
+                    "Location": url_for(
+                        "characters.generate",
+                        character_id=character_id,
+                        _anchor="character",
+                    )
+                },
+            )
+
         return redirect(
-            url_for("characters.generate", character_id=character_id)
+            url_for(
+                "characters.generate",
+                character_id=character_id,
+                _anchor="character",
+            )
         )
 
     character_id = request.args.get("character_id")
-    character = None
+
+    if character_id is not None and not character_id.isdigit():
+        return "Bad request", 400
 
     if character_id:
         character = character_dao.get_character(
@@ -139,9 +158,11 @@ def generate():
         if character.user_id != user_id:
             return "Unauthorized", 401
 
-    return render_template(
-        "characters/generate.html", form=form, character=character
-    )
+        return render_template(
+            "characters/generate.html", form=form, character=character
+        )
+
+    return render_template("characters/generate.html", form=form)
 
 
 def _get_field_choices(options):
