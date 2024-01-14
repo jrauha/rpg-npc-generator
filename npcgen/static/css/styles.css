@@ -1,3 +1,16 @@
+.main-content {
+  min-height: 75vh;
+}
+
+.footer_links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utils */
+
 .whitespace-pre-wrap {
   white-space: pre-wrap;
 }

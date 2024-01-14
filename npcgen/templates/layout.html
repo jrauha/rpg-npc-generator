@@ -61,6 +61,14 @@
             {% block content %}
             {% endblock content %}
         </main>
+        <footer class="footer">
+            <p class="footer_links">
+                <strong>&copy; RPG NPC Generator</strong>
+                <a href="https://github.com/jrauha/rpg-npc-generator"
+                   rel="noopener noreferrer"
+                   target="_blank">Source code <i class="fa-solid fa-xs fa-arrow-up-right-from-square"></i></a>
+            </p>
+        </footer>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
         {% block scripts %}
         {% endblock scripts %}
