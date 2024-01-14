@@ -5,6 +5,7 @@ from ..core.db_utils import (
     delete_record,
     read_record_by_attr,
     record_exists,
+    update_record,
 )
 from ..core.pagination import PaginatedResponse, Pagination
 from .models import (
@@ -45,6 +46,7 @@ class CharacterDao:
             LEFT JOIN character t ON
             t.id = ch.template_id
             WHERE ch.id = :id
+            AND ch.deleted = FALSE
             """
             ),
             {"id": id},
@@ -90,6 +92,7 @@ class CharacterDao:
             LEFT JOIN character t ON
             t.id = ch.template_id
             WHERE ch.is_template = :template
+            AND ch.deleted = FALSE
             AND ch.user_id = :user_id
             OR ch.user_id IS NULL
             ORDER BY ch.created_at DESC
@@ -136,6 +139,10 @@ class CharacterDao:
 
     def delete_character(self, character_id):
         delete_record(self.session, "character", character_id)
+        self.session.commit()
+
+    def soft_delete_character(self, character_id):
+        update_record(self.session, "character", character_id, deleted=True)
         self.session.commit()
 
     def character_with_name_exists(self, name):

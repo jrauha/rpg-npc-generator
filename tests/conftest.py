@@ -107,6 +107,54 @@ def character_fixture(session, user_fixture):
 
 
 @pytest.fixture
+def character_template_fixture(session):
+    from npcgen.characters.daos import CharacterDao
+
+    test_character = Character(
+        alignment_id=1,
+        class_id=2,
+        race_id=3,
+        level=5,
+        gender=Gender.MALE,
+        name="John Doe",
+        hints="",
+        backstory="",
+        plot_hook="",
+        strength=10,
+        dexterity=12,
+        constitution=14,
+        intelligence=16,
+        wisdom=18,
+        charisma=20,
+        perception=15,
+        armor_class=18,
+        hit_points=50,
+        speed=30,
+        fortitude_save=8,
+        reflex_save=6,
+        will_save=10,
+        id=1,
+        alignment_name="Neutral",
+        class_name="Fighter",
+        template_id=None,
+        template_name=None,
+        race_name="Human",
+        user_id=None,
+        is_template=True,
+        skills=[],
+        items=[],
+    )
+
+    character_dao = CharacterDao(session)
+    id = character_dao.create_character(test_character)
+    test_character.id = id
+
+    yield test_character
+
+    character_dao.delete_character(id)
+
+
+@pytest.fixture
 def login_user(client, user_fixture):
     with client.session_transaction() as sess:
         sess["user_id"] = user_fixture.id

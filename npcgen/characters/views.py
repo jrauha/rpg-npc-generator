@@ -3,6 +3,7 @@ import os
 
 from flask import (
     Blueprint,
+    flash,
     redirect,
     render_template,
     request,
@@ -68,6 +69,7 @@ def characters():
 
 
 @bp.route("/character/<int:character_id>")
+@login_required
 def character_details(character_id):
     character = character_dao.get_character(
         character_id, populate_items=True, populate_skills=True
@@ -76,7 +78,32 @@ def character_details(character_id):
     if character is None:
         return "Character not found", 404
 
-    return render_template("characters/details.html", character=character)
+    if not character.is_template and character.user_id != session["user_id"]:
+        return "Unauthorized", 401
+
+    return render_template(
+        "characters/details.html",
+        character=character,
+    )
+
+
+@bp.route("/character/delete/<int:character_id>", methods=["POST"])
+@login_required
+def delete_character(character_id):
+    character = character_dao.get_character(character_id)
+
+    if character is None:
+        return "Character not found", 404
+
+    if character.is_template:
+        return "Bad request", 400
+
+    if character.user_id != session["user_id"]:
+        return "Unauthorized", 401
+
+    character_dao.soft_delete_character(character.id)
+    flash(f"Character {character.name} deleted", "success")
+    return redirect(url_for("characters.characters", _anchor="character"))
 
 
 @bp.route("/generate", methods=["GET", "POST"])
@@ -108,6 +135,9 @@ def generate():
         )
         if character is None:
             return "Character not found", 404
+
+        if character.user_id != user_id:
+            return "Unauthorized", 401
 
     return render_template(
         "characters/generate.html", form=form, character=character

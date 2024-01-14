@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="container mt-6">
+    <div class="container">
         <div class="columns is-variable is-7">
             <div class="column is-one-third">
                 <div class="box p-5">{% include "characters/partials/generate_form.html" %}</div>
             </div>
-            <div class="column is-two-thirds">
+            <div id="character" class="column is-two-thirds">
                 {% if character %}
                     {% include "characters/partials/character_details.html" %}
                 {% else %}
                     <div class="p-6 is-flex is-align-items-center is-justify-content-center is-fullheight">
                         <div class="is-flex is-align-items-center is-flex-direction-column is-justify-content-center mb-6">
                             <i class="fa-regular fa-eye fa-3x mb-4 has-text-dark-grey"></i>
-                            <h1 class="title is-5 has-text-dark-grey">Your character will show up here</h1>
+                            <h1 class="title is-5 has-text-dark-grey has-text-centered">Your character will show up here</h1>
                         </div>
                     </div>
                 {% endif %}
