@@ -1,4 +1,5 @@
 import pytest
+from sqlalchemy import text
 
 import npcgen.characters.ai_tools
 from npcgen import create_app
@@ -32,9 +33,17 @@ def runner(app):
 
 @pytest.fixture
 def session(app):
+    if "_test" not in app.config["SQLALCHEMY_DATABASE_URI"]:
+        pytest.exit("Refusing to run tests on non-test database.")
+
     with app.app_context():
         db.create_all()
         yield db.session
+
+        db.session.execute(text("TRUNCATE TABLE character CASCADE;"))
+        db.session.execute(text("TRUNCATE TABLE app_user CASCADE;"))
+
+        db.session.commit()
         db.session.remove()
         db.drop_all()
 
