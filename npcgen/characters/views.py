@@ -54,18 +54,29 @@ def index():
 def characters():
     user_id = session["user_id"]
     page = int(request.args.get("page") or 1)
-    tab = request.args.get("tab")
+    tab = request.args.get("tab") or None
+    search = request.args.get("search")
 
     res = character_dao.get_characters_by_user(
-        user_id, tab == "templates", page
+        user_id, _resolve_template_filter(tab), page, search=search
     )
 
     return render_template(
         "characters/index.html",
         tab=tab,
+        search=search,
         data=res.data,
         pagination=res.pagination,
     )
+
+
+def _resolve_template_filter(tab):
+    if tab == "templates":
+        return True
+    elif tab == "my_characters":
+        return False
+    else:
+        return None
 
 
 @bp.route("/character/<int:character_id>")

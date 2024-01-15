@@ -64,13 +64,11 @@ class CharacterDao:
         return character
 
     def get_characters_by_user(
-        self, user_id, template=False, page=1, page_size=20
+        self, user_id, template=None, page=1, page_size=20, search=None
     ):
         offset = (page - 1) * page_size
 
-        records = self.session.execute(
-            text(
-                """
+        query = """
             SELECT
             count(*) OVER() AS total_count,
             ch.*,
@@ -91,19 +89,32 @@ class CharacterDao:
             a.id = alignment_id
             LEFT JOIN character t ON
             t.id = ch.template_id
-            WHERE ch.is_template = :template
-            AND ch.deleted = FALSE
-            AND ch.user_id = :user_id
-            OR ch.user_id IS NULL
+            WHERE ch.deleted = FALSE
+            AND (ch.user_id = :user_id OR ch.user_id IS NULL)
+            {template_condition}
+            {search_condition}
             ORDER BY ch.created_at DESC
             LIMIT :page_size OFFSET :offset
-            """
-            ),
+        """
+
+        template_condition = (
+            "AND ch.is_template = :template" if template is not None else ""
+        )
+        search_condition = "AND ch.name ILIKE :search" if search else ""
+
+        query = query.format(
+            template_condition=template_condition,
+            search_condition=search_condition,
+        )
+
+        records = self.session.execute(
+            text(query),
             {
                 "user_id": user_id,
                 "template": template,
                 "page_size": page_size,
                 "offset": offset,
+                "search": f"%{search}%" if search else None,
             },
         ).fetchall()
 
@@ -112,7 +123,7 @@ class CharacterDao:
             pagination=Pagination(
                 page,
                 page_size,
-                records[0].total_count // page_size + 1,
+                records[0].total_count // page_size + 1 if records else 1,
             ),
         )
 
