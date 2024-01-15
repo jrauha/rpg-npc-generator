@@ -6,8 +6,10 @@ def test_login_success(client, user_fixture):
 
     with client:
         client.post(
-            "/login", data={"username": "admin", "password": "password1"}
+            "/login",
+            data={"username": user_fixture.username, "password": "password1"},
         )
+        assert "user_id" in session
         assert isinstance(session["user_id"], int)
 
 
@@ -15,7 +17,10 @@ def test_login_invalid_credentials(client, user_fixture):
     assert client.get("/login").status_code == 200
 
     with client:
-        client.post("/login", data={"username": "admin", "password": "wrong"})
+        client.post(
+            "/login",
+            data={"username": user_fixture.username, "password": "wrong"},
+        )
         assert "user_id" not in session
 
 
@@ -54,3 +59,71 @@ def test_change_password(client, login_user):
         )
         assert response.status_code == 200
         assert b"Account" in response.data
+
+
+def test_registration_success(client):
+    assert client.get("/register").status_code == 200
+
+    with client:
+        response = client.post(
+            "/register",
+            data={
+                "username": "new_user",
+                "email": "new_user@aol.com",
+                "password": "password1",
+                "password_confirm": "password1",
+            },
+        )
+        assert response.status_code == 302
+        assert "/login" in response.headers["Location"]
+
+
+def test_registration_invalid_credentials(client):
+    assert client.get("/register").status_code == 200
+
+    with client:
+        response = client.post(
+            "/register",
+            data={
+                "username": "new_user",
+                "email": "new_user@example.com",
+                "password": "password1",
+                "password_confirm": "wrong",
+            },
+        )
+        assert response.status_code == 200
+        assert b"Passwords must match" in response.data
+
+
+def test_registration_existing_username(client, user_fixture):
+    assert client.get("/register").status_code == 200
+
+    with client:
+        response = client.post(
+            "/register",
+            data={
+                "username": user_fixture.username,
+                "email": "new_user@example.com",
+                "password": "password1",
+                "password_confirm": "password1",
+            },
+        )
+        assert response.status_code == 200
+        assert b"Username already exists" in response.data
+
+
+def test_registration_existing_email(client, user_fixture):
+    assert client.get("/register").status_code == 200
+
+    with client:
+        response = client.post(
+            "/register",
+            data={
+                "username": "new_user",
+                "email": user_fixture.email,
+                "password": "password1",
+                "password_confirm": "password1",
+            },
+        )
+        assert response.status_code == 200
+        assert b"Email already exists" in response.data

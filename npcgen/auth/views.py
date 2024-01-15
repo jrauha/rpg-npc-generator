@@ -1,10 +1,11 @@
 import click
-from flask import Blueprint, redirect, render_template, session, url_for
+from flask import Blueprint, flash, redirect, render_template, session, url_for
 
+from ..core.expections import ValidationError
 from ..extensions import db
 from .daos import UserDao
 from .decorators import login_required
-from .forms import ChangePasswordForm, LoginForm
+from .forms import ChangePasswordForm, LoginForm, RegistrationForm
 from .models import User
 from .services import AuthService
 
@@ -31,6 +32,26 @@ def login():
         return redirect(url_for("auth.account"))
 
     return render_template("auth/login.html", form=form)
+
+
+@bp.route("/register", methods=["GET", "POST"])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        try:
+            username = form.username.data
+            email = form.email.data
+            password = form.password.data
+            user = User(username=username, email=email, password=password)
+            auth_service.register_user(user)
+            flash("Account created successfully.", "success")
+            return redirect(url_for("auth.login"))
+        except ValidationError as e:
+            form_error = getattr(form, e.attribute)
+            form_error.errors.append(e.reason)
+            return render_template("auth/register.html", form=form)
+
+    return render_template("auth/register.html", form=form)
 
 
 @bp.route("/change-password", methods=["GET", "POST"])

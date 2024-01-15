@@ -1,0 +1,25 @@
+{% from "macros.html" import render_field %}
+{% extends "layout.html" %}
+{% block title %}
+    Registration
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="columns is-centered mt-6">
+            <div class="column is-one-quarter">
+                <h1 class="title">Register</h1>
+                {% if error %}<div class="notification is-danger">{{ error }}</div>{% endif %}
+                <form action="{{ url_for("auth.register") }}" method="post">
+                    {{ form.hidden_tag() }}
+                    {{ render_field(form.username) }}
+                    {{ render_field(form.email) }}
+                    {{ render_field(form.password, type="password") }}
+                    {{ render_field(form.password_confirm, type="password") }}
+                    <div class="control mt-5">
+                        <input class="button is-primary is-fullwidth" type="submit" value="Register" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
