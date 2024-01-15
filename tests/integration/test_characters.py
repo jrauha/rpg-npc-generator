@@ -6,6 +6,17 @@ def test_character_details(client, character_fixture, login_user):
     assert character_fixture.name.encode() in response.data
 
 
+def test_character_details_template(
+    client, character_template_fixture, login_user
+):
+    character_id = character_template_fixture.id
+    response = client.get(f"/character/{character_id}")
+
+    assert response.status_code == 200
+    assert character_template_fixture.name.encode() in response.data
+    assert b"Delete character" not in response.data
+
+
 def test_character_details_not_found(client, login_user):
     character_id = 999
     response = client.get(f"/character/{character_id}")
