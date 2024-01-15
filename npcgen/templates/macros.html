@@ -2,6 +2,7 @@
     <div class="field">
         {{ field.label(class="label") }}
         <div class="control">{{ field(class=class, type=type) }}</div>
+        {% if field.description %}<p class="help">{{ field.description }}</p>{% endif %}
         {% if field.errors %}
             <ul class="errors">
                 {% for error in field.errors %}<li class="has-text-danger has-text-weight-medium">{{ error }}</li>{% endfor %}
