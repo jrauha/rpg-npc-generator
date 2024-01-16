@@ -78,10 +78,10 @@ class UserDao:
         return self._map_record_to_user(record) if record else None
 
     def create_user(self, user):
-        user = create_record(
+        user_id = create_record(
             self.db_session,
             self.USER_TABLE,
-            returning="*",
+            returning="id",
             username=user.username,
             email=user.email,
             password=generate_password_hash(user.password),
@@ -89,7 +89,7 @@ class UserDao:
         )
 
         self.db_session.commit()
-        return self._map_record_to_user(user)
+        return user_id[0]
 
     def update_password(self, user_id, password):
         update_record(

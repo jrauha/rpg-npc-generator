@@ -23,6 +23,7 @@ def test_authenticate_valid_credentials(mock_user):
     auth_service = AuthService(user_dao_mock)
     user = auth_service.authenticate("admin", "password1")
     assert user is not None
+    assert user.id == mock_user.id
 
 
 def test_authenticate_invalid_credentials(mock_user):
@@ -33,16 +34,17 @@ def test_authenticate_invalid_credentials(mock_user):
     assert user is None
 
 
-def test_register_user():
+def test_register_user(mock_user):
     user_dao_mock = MagicMock()
     user_dao_mock.get_user_by_username.return_value = None
     user_dao_mock.get_user_by_email.return_value = None
-    user_dao_mock.create_user.return_value = mock_user
+    user_dao_mock.create_user.return_value = mock_user.id
     auth_service = AuthService(user_dao_mock)
-    user = auth_service.register_user(
+    user_id = auth_service.register_user(
         User(username="admin", password="password1", email="admin@example.com")
     )
-    assert user is not None
+    assert user_id is not None
+    assert isinstance(user_id, int)
 
 
 def test_register_user_username_exists():

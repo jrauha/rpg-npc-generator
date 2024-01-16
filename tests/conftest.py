@@ -61,7 +61,8 @@ def user_fixture(session):
     )
 
     user_dao = UserDao(session)
-    user = user_dao.create_user(test_admin)
+    user_id = user_dao.create_user(test_admin)
+    user = user_dao.get_user_by_id(user_id)
 
     yield user
 

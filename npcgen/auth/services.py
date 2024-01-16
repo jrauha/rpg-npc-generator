@@ -22,6 +22,6 @@ class AuthService:
                 "password", "Password must be at least 8 characters long"
             )
 
-        user = self.user_dao.create_user(user)
+        user_id = self.user_dao.create_user(user)
 
-        return user
+        return user_id
