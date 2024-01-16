@@ -105,14 +105,14 @@
                         {% if pagination.page > 1 %}
                             <li>
                                 <a class="pagination-link"
-                                   href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.page-1) }}">Previous</a>
+                                   href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=pagination.page-1) }}">Previous</a>
                             </li>
                         {% endif %}
                         {% if pagination.total_pages <= 5 %}
                             {% for p in range(1, pagination.total_pages+1) %}
                                 <li>
                                     <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
+                                       href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                 </li>
                             {% endfor %}
                         {% else %}
@@ -120,7 +120,7 @@
                                 {% for p in range(1, 4) %}
                                     <li>
                                         <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                           href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
+                                           href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                     </li>
                                 {% endfor %}
                                 <li>
@@ -128,14 +128,14 @@
                                 </li>
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.total_pages) }}">{{
+                                       href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=pagination.total_pages) }}">{{
                                         pagination.total_pages
                                     }}</a>
                                 </li>
                             {% elif pagination.page >= pagination.total_pages - 2 %}
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=1) }}">1</a>
+                                       href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=1) }}">1</a>
                                 </li>
                                 <li>
                                     <span class="pagination-ellipsis">&hellip;</span>
@@ -143,13 +143,13 @@
                                 {% for p in range(pagination.total_pages-2, pagination.total_pages+1) %}
                                     <li>
                                         <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                           href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
+                                           href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                     </li>
                                 {% endfor %}
                             {% else %}
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=1) }}">1</a>
+                                       href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=1) }}">1</a>
                                 </li>
                                 <li>
                                     <span class="pagination-ellipsis">&hellip;</span>
@@ -157,7 +157,7 @@
                                 {% for p in range(pagination.page-1, pagination.page+2) %}
                                     <li>
                                         <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                           href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
+                                           href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                     </li>
                                 {% endfor %}
                                 <li>
@@ -165,7 +165,7 @@
                                 </li>
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.total_pages) }}">{{
+                                       href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=pagination.total_pages) }}">{{
                                         pagination.total_pages
                                     }}</a>
                                 </li>
@@ -174,7 +174,7 @@
                         {% if pagination.page < pagination.total_pages %}
                             <li>
                                 <a class="pagination-link"
-                                   href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.page+1) }}">Next</a>
+                                   href="{{ url_for('characters.characters', tab=tab, search=search, sort=sort, page=pagination.page+1) }}">Next</a>
                             </li>
                         {% endif %}
                     </ul>
