@@ -57,7 +57,7 @@ def characters():
     page = int(request.args.get("page") or 1)
     tab = request.args.get("tab") or None
     search = request.args.get("search")
-    sort = request.args.get("sort") or "created_at_desc"
+    sort = request.args.get("sort") or "date_desc"
 
     res = character_dao.get_characters_by_user(
         user_id,
