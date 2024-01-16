@@ -1,5 +1,13 @@
 import click
-from flask import Blueprint, flash, redirect, render_template, session, url_for
+from flask import (
+    Blueprint,
+    current_app,
+    flash,
+    redirect,
+    render_template,
+    session,
+    url_for,
+)
 
 from ..core.expections import ValidationError
 from ..extensions import db
@@ -36,6 +44,11 @@ def login():
 
 @bp.route("/register", methods=["GET", "POST"])
 def register():
+    if current_app.config.get("DISABLE_REGISTRATION"):
+        return render_template(
+            "auth/register.html", registration_disabled=True
+        )
+
     form = RegistrationForm()
     if form.validate_on_submit():
         try:

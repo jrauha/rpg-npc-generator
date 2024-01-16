@@ -6,6 +6,12 @@ basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, ".env"))
 
 
+def _parse_bool(value, default=False):
+    if value is None:
+        return default
+    return str(value).lower() in ["true", "1"]
+
+
 def build_database_uri():
     user = environ.get("POSTGRES_USER") or "postgres"
     password = environ.get("POSTGRES_PASSWORD") or "postgres"
@@ -24,6 +30,7 @@ SQLALCHEMY_DATABASE_URI = build_database_uri()
 STATIC_FOLDER = "static"
 TEMPLATES_FOLDER = "templates"
 OPENAI_API_KEY = environ.get("OPENAI_API_KEY")
+DISABLE_REGISTRATION = _parse_bool(environ.get("DISABLE_REGISTRATION"), False)
 
 REDIS_URL = environ.get("REDIS_URL", "redis://redis:6379/0")
 

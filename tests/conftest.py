@@ -16,6 +16,7 @@ def app():
         DEBUG=False,
         TESTING=True,
         WTF_CSRF_ENABLED=False,
+        DISABLE_REGISTRATION=False,
     )
 
     yield app

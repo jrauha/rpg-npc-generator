@@ -127,3 +127,11 @@ def test_registration_existing_email(client, user_fixture):
         )
         assert response.status_code == 200
         assert b"Email already exists" in response.data
+
+
+def test_disable_registration(app, client):
+    app.config["DISABLE_REGISTRATION"] = True
+
+    response = client.get("/register")
+    assert response.status_code == 200
+    assert b"Registration is currently disabled" in response.data
