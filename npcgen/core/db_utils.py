@@ -11,14 +11,17 @@ def create_record(cur, table_name, returning=None, **kwargs):
     return result.fetchone() if returning else None
 
 
-def read_records(cur, table_name):
-    query = cur.execute(text(f"SELECT * FROM {table_name}"))
+def read_records(cur, table_name, columns=None):
+    column_names = ", ".join(columns) if columns else "*"
+    query = cur.execute(text(f"SELECT {column_names} FROM {table_name}"))
     return query.fetchall()
 
 
-def read_record_by_id(cur, table_name, record_id):
+def read_record_by_id(cur, table_name, record_id, columns=None):
+    column_names = ", ".join(columns) if columns else "*"
     query = cur.execute(
-        text(f"SELECT * FROM {table_name} WHERE id = :id"), {"id": record_id}
+        text(f"SELECT {column_names} FROM {table_name} WHERE id = :id"),
+        {"id": record_id},
     )
     return query.fetchone()
 
@@ -33,9 +36,10 @@ def record_exists(cur, table_name, attr, value):
     return query.fetchone()[0]
 
 
-def read_record_by_attr(cur, table_name, attr, value):
+def read_record_by_attr(cur, table_name, attr, value, columns=None):
+    column_names = ", ".join(columns) if columns else "*"
     query = cur.execute(
-        text(f"SELECT * FROM {table_name} WHERE {attr} = :value"),
+        text(f"SELECT {column_names} FROM {table_name} WHERE {attr} = :value"),
         {"value": value},
     )
     return query.fetchone()

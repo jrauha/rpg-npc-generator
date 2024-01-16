@@ -555,7 +555,9 @@ class SkillDao:
         self.session = session
 
     def get_skill_by_name(self, name):
-        record = read_record_by_attr(self.session, "skill", "name", name)
+        record = read_record_by_attr(
+            self.session, "skill", "name", name, ["id", "name", "description"]
+        )
         return self._map_record_to_skill(record) if record else None
 
     def create_skill(self, skill):
