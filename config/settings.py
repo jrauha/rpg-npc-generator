@@ -24,3 +24,11 @@ SQLALCHEMY_DATABASE_URI = build_database_uri()
 STATIC_FOLDER = "static"
 TEMPLATES_FOLDER = "templates"
 OPENAI_API_KEY = environ.get("OPENAI_API_KEY")
+
+REDIS_URL = environ.get("REDIS_URL", "redis://redis:6379/0")
+
+CELERY_CONFIG = {
+    "broker_url": REDIS_URL,
+    "result_backend": REDIS_URL,
+    "include": [],
+}

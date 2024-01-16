@@ -22,7 +22,6 @@ services:
         - "UID=${UID:-1000}"
         - "GID=${GID:-1000}"
         - "FLASK_DEBUG=${FLASK_DEBUG:-false}"
-        - "NODE_ENV=${NODE_ENV:-production}"
     depends_on:
       postgres:
         condition: "service_started"
@@ -48,5 +47,48 @@ services:
     volumes:
       - "${DOCKER_WEB_VOLUME:-./static:/app/static}"
 
+  redis:
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_REDIS_CPUS:-0}"
+          memory: "${DOCKER_REDIS_MEMORY:-0}"
+    image: "redis:7.2.3-bookworm"
+    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+    stop_grace_period: "3s"
+    volumes:
+      - "redis:/data"
+
+  worker:
+    build:
+      context: "."
+      target: "app"
+      args:
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+        - "FLASK_DEBUG=${FLASK_DEBUG:-false}"
+    depends_on:
+      postgres:
+        condition: "service_started"
+        required: false
+      redis:
+        condition: "service_started"
+        required: false
+    env_file:
+      - ".env"
+    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+    stop_grace_period: "3s"
+    tty: true
+    volumes:
+      - "${DOCKER_WEB_VOLUME:-./public:/app/public}"
+    command: celery -A "npcgen.celery_app" worker -l "${CELERY_LOG_LEVEL:-info}"
+    entrypoint: []
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_WORKER_CPUS:-0}"
+          memory: "${DOCKER_WORKER_MEMORY:-0}"
+
 volumes:
   postgres: {}
+  redis: {}
