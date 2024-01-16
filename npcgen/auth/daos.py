@@ -15,16 +15,19 @@ class UserDao:
         record = self.db_session.execute(
             text(
                 f"""
-            SELECT
-            id,
-            username,
-            email,
-            password,
-            superuser
-            FROM {self.USER_TABLE}
-            WHERE username = :username
-            AND deleted = FALSE
-            """
+                SELECT
+                    id,
+                    username,
+                    email,
+                    password,
+                    superuser
+                FROM
+                    {self.USER_TABLE}
+                WHERE
+                    username = :username
+                AND
+                    deleted = FALSE
+                """
             ),
             {"username": username},
         ).fetchone()
@@ -34,16 +37,19 @@ class UserDao:
         record = self.db_session.execute(
             text(
                 f"""
-            SELECT
-            id,
-            username,
-            email,
-            password,
-            superuser
-            FROM {self.USER_TABLE}
-            WHERE email = :email
-            AND deleted = FALSE
-            """
+                SELECT
+                    id,
+                    username,
+                    email,
+                    password,
+                    superuser
+                FROM
+                    {self.USER_TABLE}
+                WHERE
+                    email = :email
+                AND
+                    deleted = FALSE
+                """
             ),
             {"email": email},
         ).fetchone()
@@ -53,16 +59,19 @@ class UserDao:
         record = self.db_session.execute(
             text(
                 f"""
-            SELECT
-            id,
-            username,
-            email,
-            password,
-            superuser
-            FROM {self.USER_TABLE}
-            WHERE id = :user_id
-            AND deleted = FALSE
-            """
+                SELECT
+                    id,
+                    username,
+                    email,
+                    password,
+                    superuser
+                FROM
+                    {self.USER_TABLE}
+                WHERE
+                    id = :user_id
+                AND
+                    deleted = FALSE
+                """
             ),
             {"user_id": user_id},
         ).fetchone()

@@ -26,28 +26,52 @@ class CharacterDao:
         record = self.session.execute(
             text(
                 """
-            SELECT
-            ch.*,
-            a.id alignment_id,
-            a.name alignment_name,
-            cc.id class_id,
-            cc.name class_name,
-            r.id race_id,
-            r.name race_name,
-            t.id AS template_id,
-            t.name AS template_name
-            FROM character ch
-            LEFT JOIN character_class cc ON
-            cc.id = class_id
-            JOIN race r ON
-            r.id = race_id
-            JOIN alignment a ON
-            a.id = alignment_id
-            LEFT JOIN character t ON
-            t.id = ch.template_id
-            WHERE ch.id = :id
-            AND ch.deleted = FALSE
-            """
+                SELECT
+                    ch.id,
+                    ch.user_id,
+                    ch.name,
+                    ch.hints,
+                    ch.backstory,
+                    ch.plot_hook,
+                    ch.level,
+                    ch.gender,
+                    ch.strength,
+                    ch.dexterity,
+                    ch.constitution,
+                    ch.intelligence,
+                    ch.wisdom,
+                    ch.charisma,
+                    ch.perception,
+                    ch.armor_class,
+                    ch.hit_points,
+                    ch.speed,
+                    ch.fortitude_save,
+                    ch.reflex_save,
+                    ch.will_save,
+                    ch.is_template,
+                    a.id alignment_id,
+                    a.name alignment_name,
+                    cc.id class_id,
+                    cc.name class_name,
+                    r.id race_id,
+                    r.name race_name,
+                    t.id AS template_id,
+                    t.name AS template_name
+                FROM
+                    character ch
+                LEFT JOIN
+                    character_class cc ON cc.id = ch.class_id
+                JOIN
+                    race r ON r.id = ch.race_id
+                JOIN
+                    alignment a ON a.id = ch.alignment_id
+                LEFT JOIN
+                    character t ON t.id = ch.template_id
+                WHERE
+                    ch.id = :id
+                AND
+                    ch.deleted = FALSE
+                """
             ),
             {"id": id},
         ).fetchone()
@@ -70,31 +94,56 @@ class CharacterDao:
 
         query = """
             SELECT
-            count(*) OVER() AS total_count,
-            ch.*,
-            a.id alignment_id,
-            a.name alignment_name,
-            cc.id class_id,
-            cc.name class_name,
-            r.id race_id,
-            r.name race_name,
-            t.id AS template_id,
-            t.name AS template_name
-            FROM character ch
-            LEFT JOIN character_class cc ON
-            cc.id = class_id
-            JOIN race r ON
-            r.id = race_id
-            JOIN alignment a ON
-            a.id = alignment_id
-            LEFT JOIN character t ON
-            t.id = ch.template_id
-            WHERE ch.deleted = FALSE
-            AND (ch.user_id = :user_id OR ch.user_id IS NULL)
-            {template_condition}
-            {search_condition}
-            ORDER BY ch.created_at DESC
-            LIMIT :page_size OFFSET :offset
+                count(*) OVER() AS total_count,
+                ch.id,
+                ch.user_id,
+                ch.name,
+                ch.hints,
+                ch.backstory,
+                ch.plot_hook,
+                ch.level,
+                ch.gender,
+                ch.strength,
+                ch.dexterity,
+                ch.constitution,
+                ch.intelligence,
+                ch.wisdom,
+                ch.charisma,
+                ch.perception,
+                ch.armor_class,
+                ch.hit_points,
+                ch.speed,
+                ch.fortitude_save,
+                ch.reflex_save,
+                ch.will_save,
+                ch.is_template,
+                a.id alignment_id,
+                a.name alignment_name,
+                cc.id class_id,
+                cc.name class_name,
+                r.id race_id,
+                r.name race_name,
+                t.id template_id,
+                t.name template_name
+            FROM
+                character ch
+            LEFT JOIN
+                character_class cc ON cc.id = ch.class_id
+            JOIN
+                race r ON r.id = ch.race_id
+            JOIN
+                alignment a ON a.id = ch.alignment_id
+            LEFT JOIN
+                character t ON t.id = ch.template_id
+            WHERE
+                ch.deleted = FALSE
+                AND (ch.user_id = :user_id OR ch.user_id IS NULL)
+                {template_condition}
+                {search_condition}
+            ORDER BY
+                ch.created_at DESC
+            LIMIT
+                :page_size OFFSET :offset
         """
 
         template_condition = (
@@ -173,20 +222,23 @@ class CharacterDao:
         records = self.session.execute(
             text(
                 """
-            SELECT
-            i.id,
-            i.name,
-            i.item_type,
-            i.damage,
-            i.damage_type,
-            i.traits,
-            ci.proficiency
-            FROM item i
-            JOIN character_item ci ON
-            ci.item_id = i.id
-            WHERE ci.character_id = :character_id
-            ORDER BY i.item_type, i.name
-            """
+                SELECT
+                    i.id,
+                    i.name,
+                    i.item_type,
+                    i.damage,
+                    i.damage_type,
+                    i.traits,
+                    ci.proficiency
+                FROM
+                    item i
+                JOIN
+                    character_item ci ON ci.item_id = i.id
+                WHERE
+                    ci.character_id = :character_id
+                ORDER BY
+                    i.item_type, i.name
+                """
             ),
             {"character_id": character_id},
         )
@@ -206,17 +258,20 @@ class CharacterDao:
         records = self.session.execute(
             text(
                 """
-            SELECT
-            s.id,
-            s.name,
-            s.description,
-            cs.proficiency
-            FROM skill s
-            JOIN character_skill cs ON
-            cs.skill_id = s.id
-            WHERE cs.character_id = :character_id
-            ORDER BY s.name
-            """
+                SELECT
+                    s.id,
+                    s.name,
+                    s.description,
+                    cs.proficiency
+                FROM
+                    skill s
+                JOIN
+                    character_skill cs ON cs.skill_id = s.id
+                WHERE
+                    cs.character_id = :character_id
+                ORDER BY
+                    s.name
+                """
             ),
             {"character_id": character_id},
         )
@@ -226,13 +281,16 @@ class CharacterDao:
         records = self.session.execute(
             text(
                 """
-            SELECT
-            ch.id,
-            ch.name || ' (' || ch.level || ')' AS name
-            FROM character ch
-            WHERE ch.is_template = TRUE
-            ORDER BY ch.level, ch.name
-            """
+                SELECT
+                    ch.id,
+                    ch.name || ' (' || ch.level || ')' AS name
+                FROM
+                    character ch
+                WHERE
+                    ch.is_template = TRUE
+                ORDER BY
+                    ch.level, ch.name
+                """
             )
         )
         return [self._map_record_to_option(record) for record in records]
@@ -241,12 +299,14 @@ class CharacterDao:
         record = self.session.execute(
             text(
                 """
-            SELECT
-            ch.name
-            FROM character ch
-            WHERE ch.is_template = TRUE
-            AND ch.id = :template_id
-            """
+                SELECT
+                    ch.name
+                FROM
+                    character ch
+                WHERE
+                    ch.is_template = TRUE
+                    AND ch.id = :template_id
+                """
             ),
             {"template_id": template_id},
         ).fetchone()
@@ -256,11 +316,13 @@ class CharacterDao:
         record = self.session.execute(
             text(
                 """
-            SELECT
-            a.name
-            FROM alignment a
-            WHERE a.id = :alignment_id
-            """
+                SELECT
+                    a.name
+                FROM
+                    alignment a
+                WHERE
+                    a.id = :alignment_id
+                """
             ),
             {"alignment_id": alignment_id},
         ).fetchone()
@@ -271,11 +333,13 @@ class CharacterDao:
         record = self.session.execute(
             text(
                 """
-            SELECT
-            c.name
-            FROM character_class c
-            WHERE c.id = :class_id
-            """
+                SELECT
+                    c.name
+                FROM
+                    character_class c
+                WHERE
+                    c.id = :class_id
+                """
             ),
             {"class_id": class_id},
         ).fetchone()
@@ -286,11 +350,13 @@ class CharacterDao:
         record = self.session.execute(
             text(
                 """
-            SELECT
-            r.name
-            FROM race r
-            WHERE r.id = :race_id
-            """
+                SELECT
+                    r.name
+                FROM
+                    race r
+                WHERE
+                    r.id = :race_id
+                """
             ),
             {"race_id": race_id},
         ).fetchone()
@@ -301,11 +367,12 @@ class CharacterDao:
         records = self.session.execute(
             text(
                 """
-            SELECT
-            a.id,
-            a.name
-            FROM alignment a
-            """
+                SELECT
+                    a.id,
+                    a.name
+                FROM
+                    alignment a
+                """
             )
         )
         return [self._map_record_to_option(record) for record in records]
@@ -314,11 +381,12 @@ class CharacterDao:
         records = self.session.execute(
             text(
                 """
-            SELECT
-            c.id,
-            c.name
-            FROM character_class c
-            """
+                SELECT
+                    c.id,
+                    c.name
+                FROM
+                    character_class c
+                """
             )
         )
         return [self._map_record_to_option(record) for record in records]
@@ -327,11 +395,12 @@ class CharacterDao:
         records = self.session.execute(
             text(
                 """
-            SELECT
-            r.id,
-            r.name
-            FROM race r
-            """
+                SELECT
+                    r.id,
+                    r.name
+                FROM
+                    race r
+                """
             )
         )
         return [self._map_record_to_option(record) for record in records]
@@ -434,19 +503,21 @@ class ItemDao:
         query = self.session.execute(
             text(
                 """
-            SELECT
-            id,
-            name,
-            item_type,
-            damage,
-            damage_type,
-            traits
-            FROM item
-            WHERE name = :name
-            AND damage = :damage
-            AND damage_type = :damage_type
-            AND item_type = :item_type
-            """
+                SELECT
+                    id,
+                    name,
+                    item_type,
+                    damage,
+                    damage_type,
+                    traits
+                FROM
+                    item
+                WHERE
+                    name = :name
+                    AND damage = :damage
+                    AND damage_type = :damage_type
+                    AND item_type = :item_type
+                """
             ),
             kwargs,
         )
