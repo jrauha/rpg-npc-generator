@@ -57,14 +57,21 @@ def characters():
     page = int(request.args.get("page") or 1)
     tab = request.args.get("tab") or None
     search = request.args.get("search")
+    sort = request.args.get("sort") or "created_at_desc"
 
     res = character_dao.get_characters_by_user(
-        user_id, _resolve_template_filter(tab), page, search=search
+        user_id,
+        _resolve_template_filter(tab),
+        page,
+        search=search,
+        sort_field="name" if sort.startswith("name") else "created_at",
+        sort_desc=sort.endswith("desc"),
     )
 
     return render_template(
         "characters/index.html",
         tab=tab,
+        sort=sort,
         search=search,
         data=res.data,
         pagination=res.pagination,

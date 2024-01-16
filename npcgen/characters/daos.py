@@ -88,7 +88,14 @@ class CharacterDao:
         return character
 
     def get_characters_by_user(
-        self, user_id, template=None, page=1, page_size=20, search=None
+        self,
+        user_id,
+        template=None,
+        page=1,
+        page_size=20,
+        search=None,
+        sort_field=None,
+        sort_desc=False,
     ):
         offset = (page - 1) * page_size
 
@@ -141,7 +148,7 @@ class CharacterDao:
                 {template_condition}
                 {search_condition}
             ORDER BY
-                ch.created_at DESC
+                {sort_by}
             LIMIT
                 :page_size OFFSET :offset
         """
@@ -151,9 +158,14 @@ class CharacterDao:
         )
         search_condition = "AND ch.name ILIKE :search" if search else ""
 
+        sort_by = "ch.created_at DESC"
+        if sort_field:
+            sort_by = f"ch.{sort_field} {'DESC' if sort_desc else 'ASC'}"
+
         query = query.format(
             template_condition=template_condition,
             search_condition=search_condition,
+            sort_by=sort_by,
         )
 
         records = self.session.execute(

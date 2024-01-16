@@ -10,20 +10,20 @@
                 <div class="level-left">
                     {% if tab == 'templates' %}
                         <p class="level-item">
-                            <a href="{{ url_for('characters.characters', tab='all') }}">All</a>
+                            <a href="{{ url_for('characters.characters', tab='all', sort=sort) }}">All</a>
                         </p>
                         <p class="level-item">
                             <strong>Templates</strong>
                         </p>
                         <p class="level-item">
-                            <a href="{{ url_for("characters.characters", tab='my_characters') }}">My characters</a>
+                            <a href="{{ url_for("characters.characters", tab='my_characters', sort=sort) }}">My characters</a>
                         </p>
                     {% elif tab == 'my_characters' %}
                         <p class="level-item">
-                            <a href="{{ url_for('characters.characters', tab='all') }}">All</a>
+                            <a href="{{ url_for('characters.characters', tab='all', sort=sort) }}">All</a>
                         </p>
                         <p class="level-item">
-                            <a href="{{ url_for('characters.characters', tab='templates') }}">Templates</a>
+                            <a href="{{ url_for('characters.characters', tab='templates', sort=sort) }}">Templates</a>
                         </p>
                         <p class="level-item">
                             <strong>My characters</strong>
@@ -33,14 +33,36 @@
                             <strong>All</strong>
                         </p>
                         <p class="level-item">
-                            <a href="{{ url_for('characters.characters', tab='templates') }}">Templates</a>
+                            <a href="{{ url_for('characters.characters', tab='templates', sort=sort) }}">Templates</a>
                         </p>
                         <p class="level-item">
-                            <a href="{{ url_for('characters.characters', tab='my_characters') }}">My characters</a>
+                            <a href="{{ url_for('characters.characters', tab='my_characters', sort=sort) }}">My characters</a>
                         </p>
                     {% endif %}
                 </div>
                 <div class="level-right">
+                    <div class="level-item">
+                        <div class="select">
+                            <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                                <option value="{{ url_for('characters.characters', tab=tab, search=search, sort='name_asc') }}"
+                                        {% if sort == 'name_asc' %}selected{% endif %}>
+                                    Sort by Name (Ascending)
+                                </option>
+                                <option value="{{ url_for('characters.characters', tab=tab, search=search, sort='name_desc') }}"
+                                        {% if sort == 'name_desc' %}selected{% endif %}>
+                                    Sort by Name (Descending)
+                                </option>
+                                <option value="{{ url_for('characters.characters', tab=tab, search=search, sort='date_asc') }}"
+                                        {% if sort == 'date_asc' %}selected{% endif %}>
+                                    Sort by Date (Ascending)
+                                </option>
+                                <option value="{{ url_for('characters.characters', tab=tab, search=search, sort='date_desc') }}"
+                                        {% if sort == 'date_desc' %}selected{% endif %}>
+                                    Sort by Date (Descending)
+                                </option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="level-item">
                         <form class="field has-addons"
                               action="{{ url_for("characters.characters") }}"
@@ -83,14 +105,14 @@
                         {% if pagination.page > 1 %}
                             <li>
                                 <a class="pagination-link"
-                                   href="{{ url_for('characters.characters', page=pagination.page-1) }}">Previous</a>
+                                   href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.page-1) }}">Previous</a>
                             </li>
                         {% endif %}
                         {% if pagination.total_pages <= 5 %}
                             {% for p in range(1, pagination.total_pages+1) %}
                                 <li>
                                     <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                       href="{{ url_for('characters.characters', page=p) }}">{{ p }}</a>
+                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                 </li>
                             {% endfor %}
                         {% else %}
@@ -98,7 +120,7 @@
                                 {% for p in range(1, 4) %}
                                     <li>
                                         <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                           href="{{ url_for('characters.characters', page=p) }}">{{ p }}</a>
+                                           href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                     </li>
                                 {% endfor %}
                                 <li>
@@ -106,14 +128,14 @@
                                 </li>
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, page=pagination.total_pages) }}">{{
+                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.total_pages) }}">{{
                                         pagination.total_pages
                                     }}</a>
                                 </li>
                             {% elif pagination.page >= pagination.total_pages - 2 %}
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, page=1) }}">1</a>
+                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=1) }}">1</a>
                                 </li>
                                 <li>
                                     <span class="pagination-ellipsis">&hellip;</span>
@@ -121,13 +143,13 @@
                                 {% for p in range(pagination.total_pages-2, pagination.total_pages+1) %}
                                     <li>
                                         <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                           href="{{ url_for('characters.characters', page=p) }}">{{ p }}</a>
+                                           href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                     </li>
                                 {% endfor %}
                             {% else %}
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, page=1) }}">1</a>
+                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=1) }}">1</a>
                                 </li>
                                 <li>
                                     <span class="pagination-ellipsis">&hellip;</span>
@@ -135,7 +157,7 @@
                                 {% for p in range(pagination.page-1, pagination.page+2) %}
                                     <li>
                                         <a class="pagination-link {% if p == pagination.page %}is-current{% endif %}"
-                                           href="{{ url_for('characters.characters', page=p) }}">{{ p }}</a>
+                                           href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=p) }}">{{ p }}</a>
                                     </li>
                                 {% endfor %}
                                 <li>
@@ -143,7 +165,7 @@
                                 </li>
                                 <li>
                                     <a class="pagination-link"
-                                       href="{{ url_for('characters.characters', tab=pagination.tab, page=pagination.total_pages) }}">{{
+                                       href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.total_pages) }}">{{
                                         pagination.total_pages
                                     }}</a>
                                 </li>
@@ -152,7 +174,7 @@
                         {% if pagination.page < pagination.total_pages %}
                             <li>
                                 <a class="pagination-link"
-                                   href="{{ url_for('characters.characters', tab=pagination.tab, page=pagination.page+1) }}">Next</a>
+                                   href="{{ url_for('characters.characters', tab=pagination.tab, search=search, sort=sort, page=pagination.page+1) }}">Next</a>
                             </li>
                         {% endif %}
                     </ul>
