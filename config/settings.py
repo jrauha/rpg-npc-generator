@@ -13,6 +13,10 @@ def _parse_bool(value, default=False):
 
 
 def build_database_uri():
+    url = environ.get("DATABASE_URL")
+    if url:
+        return url.replace("postgres://", "postgresql://", 1)
+
     user = environ.get("POSTGRES_USER") or "postgres"
     password = environ.get("POSTGRES_PASSWORD") or "postgres"
     host = environ.get("POSTGRES_HOST") or "localhost"
