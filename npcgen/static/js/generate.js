@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     $form.append(notification);
   };
 
+  const maxPollCount = 20;
+
   $form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -30,19 +32,39 @@ document.addEventListener("DOMContentLoaded", () => {
           "X-Requested-With": "XMLHttpRequest",
         },
       });
+      const data = await response.json();
 
-      if (response.status === 201) {
-        window.location.href = response.headers.get("Location");
-        return;
-      }
-      throw new Error("Something went wrong.");
+      const taskEndpoint = `/generate/${data.task_id}`;
+      let pollCount = 0;
+
+      const poll = async () => {
+        const taskResponse = await fetch(taskEndpoint);
+        const taskData = await taskResponse.json();
+
+        if (taskData.ready) {
+          if (taskData.successful) {
+            window.location.href = `/generate?character_id=${taskData.value}`;
+            return;
+          }
+          throw new Error("Character generation task failed");
+        }
+
+        pollCount++;
+        if (pollCount >= maxPollCount) {
+          throw new Error("Character generation task took too long");
+        }
+
+        // Retry after 3 seconds if the task is still in progress
+        setTimeout(poll, 3000);
+      };
+      poll();
     } catch (error) {
+      console.error(error);
+      $submitButton.disabled = false;
+      $submitButton.classList.remove("is-loading");
       displayError(
         "<strong>Error!</strong> Something went wrong. Please try again later."
       );
-    } finally {
-      $submitButton.disabled = false;
-      $submitButton.classList.remove("is-loading");
     }
   });
 });

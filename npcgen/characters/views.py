@@ -1,6 +1,7 @@
 import json
 import os
 
+from celery import shared_task
 from flask import (
     Blueprint,
     flash,
@@ -123,43 +124,33 @@ def generate():
     form = _init_character_form()
     user_id = session["user_id"]
 
+    if (
+        request.method == "POST"
+        and request.headers.get("X-Requested-With") != "XMLHttpRequest"
+    ):
+        flash("Please enable javascript to generate a character", "danger")
+        return redirect(url_for("characters.generate"))
+
     if form.validate_on_submit():
-        character_id = character_generator_service.generate_character(
-            form.get_choice_or_random(form.template_id),
-            form.get_choice_or_random(form.alignment_id),
-            form.get_choice_or_random(form.class_id),
-            form.get_choice_or_random(form.race_id),
-            form.hints.data,
-            user_id=user_id,
+        task = generate_character.delay(
+            {
+                "template_id": form.get_choice_or_random(form.template_id),
+                "alignment_id": form.get_choice_or_random(form.alignment_id),
+                "class_id": form.get_choice_or_random(form.class_id),
+                "race_id": form.get_choice_or_random(form.race_id),
+                "hints": form.hints.data,
+                "user_id": user_id,
+            }
         )
 
-        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
-            return (
-                "",
-                201,
-                {
-                    "Location": url_for(
-                        "characters.generate",
-                        character_id=character_id,
-                        _anchor="character",
-                    )
-                },
-            )
-
-        return redirect(
-            url_for(
-                "characters.generate",
-                character_id=character_id,
-                _anchor="character",
-            )
-        )
+        return {"task_id": task.id}
 
     character_id = request.args.get("character_id")
 
-    if character_id is not None and not character_id.isdigit():
-        return "Bad request", 400
-
     if character_id:
+        if not character_id.isdigit():
+            return "Bad request", 400
+
         character = character_dao.get_character(
             character_id, populate_items=True, populate_skills=True
         )
@@ -174,6 +165,17 @@ def generate():
         )
 
     return render_template("characters/generate.html", form=form)
+
+
+@bp.route("/generate/<task_id>")
+@login_required
+def generate_status(task_id):
+    task = generate_character.AsyncResult(task_id)
+    return {
+        "ready": task.ready(),
+        "successful": task.successful(),
+        "value": task.result if task.ready() else None,
+    }
 
 
 def _get_field_choices(options):
@@ -213,3 +215,12 @@ def init_templates():
 
         for character_data in characters_data:
             character_template_service.create_template(character_data)
+
+
+# Celery Tasks
+
+
+@shared_task
+def generate_character(options):
+    character_id = character_generator_service.generate_character(**options)
+    return character_id
