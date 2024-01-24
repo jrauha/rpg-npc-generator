@@ -1,5 +1,7 @@
 # RPG NPC Generator
 
+[![CI](https://github.com/jrauha/rpg-npc-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/jrauha/rpg-npc-generator/actions/workflows/ci.yml)
+
 The RPG NPC Generator is a web application for generating [non-player characters (NPCs)](https://en.wikipedia.org/wiki/Non-player_character) for tabletop role-playing games. The current logic of the app is based on the [Pathfinder 2e](https://en.wikipedia.org/wiki/Pathfinder_Roleplaying_Game) ruleset.
 
 This is a project developed for University of Helsinki [databases & web programming course](https://hy-tsoha.github.io/materiaali/). The main goal of the project was to create a character creator tool without relying on heavy client-side UI frameworks. Instead, the focus was on keeping the technology stack minimal and exploring the capabilities of large language model APIs, such as the ChatGPT API, while leveraging database concepts.
